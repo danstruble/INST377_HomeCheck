@@ -29,6 +29,7 @@ function processDataForFrontEnd(req, res) {
     fetch(baseURL)
       .then((response) => response.json())
       .then((parsedResponse) => {
+        // this then statement structures data taken from the database, which allows us to streamline the next calls
         parsedResponse.forEach(entry => {
           try {
             if(entry.property_id in addressDict) {
@@ -37,7 +38,6 @@ function processDataForFrontEnd(req, res) {
                 console.log("Look at entry: ", entry);
               }
               else {
-                console.log(addressDict[entry.property_id].violations);
                 addressDict[entry.property_id].violations.push({'violationID':entry.violation_id,'inspectionID':entry.inspection_id,'code':entry.violation_code,'desc':entry.violation_description});
               }
             }
@@ -51,8 +51,11 @@ function processDataForFrontEnd(req, res) {
           }
           
         });
-        console.log(addressDict);
         res.json({data:addressDict});
+        return addressDict;
+      })
+      .then((addressDict) => {
+        //geocoding goes here
       })
 }
 
