@@ -3,7 +3,6 @@
 const express = require('express');
 const fetch = require('node-fetch');
 const next = require('next');
-
 const dev = process.env.NODE_ENV !== 'production';
 const server = next({ dev, dir: './public' });
 const handle = server.getRequestHandler();
@@ -29,24 +28,41 @@ server
     function processDataForFrontEnd(req, res) {
       const baseURL = 'https://data.princegeorgescountymd.gov/resource/9hyf-46qb.json'; // Enter the URL for the data you would like to retrieve here
 
-      const addressDict = {};
+      let addressDict = {};
       // Your Fetch API call starts here
       // Note that at no point do you "return" anything from this function -
       // it instead handles returning data to your front end at line 34.
-      fetch(baseURL)
-        .then((response) => response.json())
-        .then((parsedResponse) => {
-          parsedResponse.forEach((entry) => {
-            const address = (`${entry.street_number} ${entry.street_name} ${entry.street_type} ${entry.city} ${entry.state}, ${entry.zip_code}`);
-            console.log(address);
-            if (entry.property_id in addressDict) {
-              addressDict[entry.property_id].count += 1;
-            } else {
-              addressDict[entry.property_id] = { 'address': address, 'count': 1 };
-            }
-          });
-          console.log(addressDict);
-        });
+        fetch(baseURL)
+          .then((response) => response.json())
+          .then((parsedResponse) => {
+            // this then statement structures data taken from the database, which allows us to streamline the next calls
+            parsedResponse.forEach(entry => {
+              try {
+                if(entry.property_id in addressDict) {
+                  addressDict[entry.property_id].count++;
+                  if (entry.violation_id in addressDict[entry.property_id].violations){
+                    console.log("Look at entry: ", entry);
+                  }
+                  else {
+                    addressDict[entry.property_id].violations.push({'violationID':entry.violation_id,'inspectionID':entry.inspection_id,'code':entry.violation_code,'desc':entry.violation_description});
+                  }
+                }
+                else {
+                  let address = (entry.street_number + " " + entry.street_name + " " + entry.street_type + " " + entry.city + " " + entry.state + ", " + entry.zip_code);
+                  addressDict[entry.property_id] = {'address':address,'count':1,'violations':[{'violationID':entry.violation_id,'inspectionID':entry.inspection_id,'code':entry.violation_code,'desc':entry.violation_description}]}
+                }
+              }
+              catch(err) {
+                console.log("Error processing entry: ",err,entry.property_id);
+              }
+
+            });
+            res.json({data:addressDict});
+            return addressDict;
+          })
+          .then((addressDict) => {
+            //geocoding goes here
+          })
     }
 
     // This is our first route on our server.
@@ -57,8 +73,8 @@ server
       return handle(req, res);
     });
     app.listen(port, () => console.log(`Example app listening on port ${port}!`));
-  })
-  .catch((err) => {
+    })
+    .catch((err) => {
     console.error(err.stack);
     process.exit(1);
-  });
+    });
