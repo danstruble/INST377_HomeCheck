@@ -30,16 +30,29 @@ function processDataForFrontEnd(req, res) {
       .then((response) => response.json())
       .then((parsedResponse) => {
         parsedResponse.forEach(entry => {
-          let address = (entry.street_number + " " + entry.street_name + " " + entry.street_type + " " + entry.city + " " + entry.state + ", " + entry.zip_code);
-          console.log(address);
-          if(entry.property_id in addressDict) {
-            addressDict[entry.property_id].count++; 
+          try {
+            if(entry.property_id in addressDict) {
+              addressDict[entry.property_id].count++;
+              if (entry.violation_id in addressDict[entry.property_id].violations){
+                console.log("Look at entry: ", entry);
+              }
+              else {
+                console.log(addressDict[entry.property_id].violations);
+                addressDict[entry.property_id].violations.push({'violationID':entry.violation_id,'inspectionID':entry.inspection_id,'code':entry.violation_code,'desc':entry.violation_description});
+              }
+            }
+            else {
+              let address = (entry.street_number + " " + entry.street_name + " " + entry.street_type + " " + entry.city + " " + entry.state + ", " + entry.zip_code);
+              addressDict[entry.property_id] = {'address':address,'count':1,'violations':[{'violationID':entry.violation_id,'inspectionID':entry.inspection_id,'code':entry.violation_code,'desc':entry.violation_description}]}
+            }
           }
-          else {
-            addressDict[entry.property_id] = {'address':address,'count':1}
+          catch(err) {
+            console.log("Error processing entry: ",err,entry.property_id);
           }
+          
         });
         console.log(addressDict);
+        res.json({data:addressDict});
       })
 }
 
