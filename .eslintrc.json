@@ -16,6 +16,7 @@
     "parserOptions": {
         "ecmaVersion": 2018
     },
+    "parser": "babel-eslint",
     "rules": {
         "no-mixed-requires": [
             0
