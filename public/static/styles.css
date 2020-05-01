@@ -5,6 +5,7 @@ body {
   color: #444;
   padding: 0 10px;
   background: #eee;
+  box-sizing: border-box;
 }
 
 h1,
@@ -14,61 +15,65 @@ h3 {
 }
 
 /* End document default styles */
-.header {
+.topBar {
   width: 100%;
   height: 80px;
-  display: block;
-  background-color: #101010;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #383838;
 }
 
-.inner_header{
+.innerTopBar{
   width: 1000px;
   height: 100%;
-  display:block;
+  display:flex;
+  justify-content: space-between;
   margin: 0 auto;
-  background-color:red;
 }
 
-.logo_container{
+.logoContainer{
   height: 100%;
-  display: table;
-  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.logo_container h1{
+.logoContainer h1{
   color: white;
   height:100%;
-  display: table-cell;
-  vertical-align: middle;
-  font-family: "Roboto";
+  display: flex;
+  align-items: center;
+  font-family: 'IBM Plex Sans', sans-serif;
   font-size: 32px;
   font-weight:200;
 }
 
-.logo_container span{
-  font-weight: 800;
+.logoContainer span{
+  font-weight: 700;
 }
 
 .nav {
   display: flex;
-  float: right;
-  height: 100%;
+  flex-direction: row;
+  justify-content: center;
+  
 }
 
 .nav a {
-  height:100%;
-  display: table;
-  float: left;
+  display: flex;
+  align-items: center;
   padding: 0px 20px;
+  text-decoration: none;
 }
 
 
 .nav a li{
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  height:100%;
   color: white;
-  font-family: "Roboto";
+  font-family: 'IBM Plex Sans', sans-serif;
   font-size: 16px;
 }
 
