@@ -91,7 +91,7 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  font-family: Helvetica, Geneva, Tahoma, sans-serif;
+  font-family: 'IBM Plex Sans', sans-serif;
 }
 
 #chartContainer {
@@ -110,14 +110,67 @@ h3 {
   background: #fefefe;
   border: 1px dashed #ccc;
   margin: 25px;
+  text-align: center;
 
+}
+
+.wrapperTest{
+  display: flex;
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
 }
 
 .wrapper div {
   border-radius: 14px;
 }
 
+.contactHeader{
+  color: black;
+  margin-top: 50px;
+}
 
+.contactHeader h1{
+  
+  font-size: 36px;
+}
+
+.contactMain{
+  margin-top: 20px;
+  margin-bottom: 145px;
+  width: 40%;
+  text-align: center;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.contactMain form{
+  line-height: 1.5;
+}
+
+.contactMain form ul{
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+}
+
+.contactMain form input{
+  font-size: 16px;
+  width: 100%;
+  margin: 30px 0;
+  background: rgba(0,0,0,0);
+  border: none;
+  border-bottom: 1px solid grey;
+}
+
+.contactMain button{
+  font-size: 16px;
+  color: white;
+  padding: 20px 32px;
+  background: #383838;
+  border: none;
+  border-radius: 4px;
+}
 
 .instructions {
   padding: 0 25px;

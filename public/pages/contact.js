@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import ContactForm from '../components/ContactForm';
 
 export default class Contact extends React.Component {
     constructor() {
@@ -7,6 +8,6 @@ export default class Contact extends React.Component {
     }
 
     render() {
-        return (<Layout>This is the contact page.</Layout>);
+        return (<Layout><ContactForm></ContactForm></Layout>);
     }
 }
