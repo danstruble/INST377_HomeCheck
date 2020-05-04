@@ -1,23 +1,52 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Header from './Header';
 import Nav from './Nav';
+import SideDrawer from './SideDrawer';
+import Burger from './Burger';
 
-const Layout = (props) => (
-  <div>
-    <Header/>
-    <div className ='topBar'>
-      <div className = 'innerTopBar'>
-        <div className = "logoContainer">
-          <h1>Home<span>CHECK</span></h1>
+
+class Layout extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sideDrawerOpen: false
+    };
+    this.drawerToggleClickHandler = this.drawerToggleClickHandler.bind(this);
+
+
+  }
+
+
+  drawerToggleClickHandler = () => {
+    this.setState({
+      sideDrawerOpen: !this.state.sideDrawerOpen
+    });
+  };
+
+  renderSideBar = () => (this.state.sideDrawerOpen ? <SideDrawer /> : null)
+
+
+  render() {
+    return (
+      <div>
+        <Header />
+        <div className='topBar'>
+          <div className='innerTopBar'>
+            <div className="logoContainer">
+              <h1>Home<span>CHECK</span></h1>
+            </div>
+            <Nav drawerToggleClickHandler={this.drawerToggleClickHandler} />
+            {this.renderSideBar()}
+          </div>
+
         </div>
-        <Nav/>
+        <div>
+          {this.props.children}
+        </div>
       </div>
+    );
+  }
 
-    </div>
-    <div>
-      {props.children}
-    </div>
-  </div>
-);
+}
 
 export default Layout;

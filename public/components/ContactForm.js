@@ -21,7 +21,7 @@ const ContactForm = () => (
             </li>
           </ul>
         </form>
-        <button type="button">Send</button>
+        <button type="submit">Send</button>
       </article>
     </div>
   </div>
