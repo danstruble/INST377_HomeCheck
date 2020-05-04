@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\contact.js"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["static\\development\\pages\\index.js"],{
 
 /***/ "../node_modules/@babel/runtime/helpers/arrayWithHoles.js":
 /*!****************************************************************!*\
@@ -828,23 +828,23 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcontact&absolutePagePath=C%3A%5CUsers%5CKevin%20Neggo%5Cdocuments%5Cgithub%5Cinst377_homecheck%5Cpublic%5Cpages%5Ccontact.js&hotRouterUpdates=true!./":
-/*!**********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcontact&absolutePagePath=C%3A%5CUsers%5CKevin%20Neggo%5Cdocuments%5Cgithub%5Cinst377_homecheck%5Cpublic%5Cpages%5Ccontact.js&hotRouterUpdates=true ***!
-  \**********************************************************************************************************************************************************************************************************************************************/
+/***/ "../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CKevin%20Neggo%5Cdocuments%5Cgithub%5Cinst377_homecheck%5Cpublic%5Cpages%5Cindex.js&hotRouterUpdates=true!./":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CKevin%20Neggo%5Cdocuments%5Cgithub%5Cinst377_homecheck%5Cpublic%5Cpages%5Cindex.js&hotRouterUpdates=true ***!
+  \*************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
     (window.__NEXT_P = window.__NEXT_P || []).push([
-      "/contact",
+      "/",
       function () {
-        var mod = __webpack_require__(/*! ./pages/contact.js */ "./pages/contact.js");
+        var mod = __webpack_require__(/*! ./pages/index.js */ "./pages/index.js");
         if (true) {
-          module.hot.accept(/*! ./pages/contact.js */ "./pages/contact.js", function () {
-            if (!next.router.components["/contact"]) return;
-            var updatedPage = __webpack_require__(/*! ./pages/contact.js */ "./pages/contact.js");
-            next.router.update("/contact", updatedPage);
+          module.hot.accept(/*! ./pages/index.js */ "./pages/index.js", function () {
+            if (!next.router.components["/"]) return;
+            var updatedPage = __webpack_require__(/*! ./pages/index.js */ "./pages/index.js");
+            next.router.update("/", updatedPage);
           });
         }
         return mod;
@@ -5038,54 +5038,6 @@ var Burger = function Burger(props) {
 
 /***/ }),
 
-/***/ "./components/ContactForm.js":
-/*!***********************************!*\
-  !*** ./components/ContactForm.js ***!
-  \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-var ContactForm = function ContactForm() {
-  return __jsx("div", {
-    className: "container"
-  }, __jsx("div", {
-    className: "wrapper"
-  }, __jsx("header", {
-    className: "contactHeader"
-  }, __jsx("h1", null, "Contact Us"), __jsx("p", null, "Please reach out to us if you have any questions!")), __jsx("article", {
-    className: "contactMain"
-  }, __jsx("form", null, __jsx("ul", null, __jsx("li", null, __jsx("input", {
-    type: "text",
-    id: "name",
-    name: "user_name",
-    placeholder: "Name",
-    maxLength: "140"
-  })), __jsx("li", null, __jsx("input", {
-    type: "text",
-    id: "email",
-    name: "user_email",
-    placeholder: "E-Mail"
-  })), __jsx("li", null, __jsx("input", {
-    type: "text",
-    id: "message",
-    name: "user_message",
-    placeholder: "Message"
-  })))), __jsx("button", {
-    type: "submit"
-  }, "Send"))));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (ContactForm);
-
-/***/ }),
-
 /***/ "./components/Header.js":
 /*!******************************!*\
   !*** ./components/Header.js ***!
@@ -5295,16 +5247,16 @@ var SideDrawer = function SideDrawer(props) {
 
 /***/ }),
 
-/***/ "./pages/contact.js":
-/*!**************************!*\
-  !*** ./pages/contact.js ***!
-  \**************************/
+/***/ "./pages/index.js":
+/*!************************!*\
+  !*** ./pages/index.js ***!
+  \************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Contact; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return IndexPage; });
 /* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "../node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "../node_modules/@babel/runtime/helpers/esm/createClass.js");
 /* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "../node_modules/@babel/runtime/helpers/esm/inherits.js");
@@ -5313,7 +5265,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "../node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
-/* harmony import */ var _components_ContactForm__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/ContactForm */ "./components/ContactForm.js");
 
 
 
@@ -5328,40 +5279,39 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 
+var IndexPage = /*#__PURE__*/function (_React$Component) {
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_2__["default"])(IndexPage, _React$Component);
 
-var Contact = /*#__PURE__*/function (_React$Component) {
-  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_2__["default"])(Contact, _React$Component);
+  var _super = _createSuper(IndexPage);
 
-  var _super = _createSuper(Contact);
-
-  function Contact() {
-    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Contact);
+  function IndexPage() {
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, IndexPage);
 
     return _super.call(this);
   }
 
-  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Contact, [{
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(IndexPage, [{
     key: "render",
     value: function render() {
-      return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_6__["default"], null, __jsx(_components_ContactForm__WEBPACK_IMPORTED_MODULE_7__["default"], null));
+      return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_6__["default"], null, "This is the home page.");
     }
   }]);
 
-  return Contact;
+  return IndexPage;
 }(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
 
 
 
 /***/ }),
 
-/***/ 2:
-/*!*************************************************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fcontact&absolutePagePath=C%3A%5CUsers%5CKevin%20Neggo%5Cdocuments%5Cgithub%5Cinst377_homecheck%5Cpublic%5Cpages%5Ccontact.js&hotRouterUpdates=true ***!
-  \*************************************************************************************************************************************************************************************************/
+/***/ 3:
+/*!****************************************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CKevin%20Neggo%5Cdocuments%5Cgithub%5Cinst377_homecheck%5Cpublic%5Cpages%5Cindex.js&hotRouterUpdates=true ***!
+  \****************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fcontact&absolutePagePath=C%3A%5CUsers%5CKevin%20Neggo%5Cdocuments%5Cgithub%5Cinst377_homecheck%5Cpublic%5Cpages%5Ccontact.js&hotRouterUpdates=true! */"../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcontact&absolutePagePath=C%3A%5CUsers%5CKevin%20Neggo%5Cdocuments%5Cgithub%5Cinst377_homecheck%5Cpublic%5Cpages%5Ccontact.js&hotRouterUpdates=true!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absolutePagePath=C%3A%5CUsers%5CKevin%20Neggo%5Cdocuments%5Cgithub%5Cinst377_homecheck%5Cpublic%5Cpages%5Cindex.js&hotRouterUpdates=true! */"../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F&absolutePagePath=C%3A%5CUsers%5CKevin%20Neggo%5Cdocuments%5Cgithub%5Cinst377_homecheck%5Cpublic%5Cpages%5Cindex.js&hotRouterUpdates=true!./");
 
 
 /***/ }),
@@ -5377,5 +5327,5 @@ module.exports = dll_e6a94776c4176f860599;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
-//# sourceMappingURL=contact.js.map
+},[[3,"static/runtime/webpack.js"]]]);
+//# sourceMappingURL=index.js.map
