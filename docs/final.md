@@ -19,7 +19,7 @@ Our solution to our information problem was to create a visual tool to help pros
 We are specifically using leaflet on our front-end for the interactive map because it is an easy tool to implement and provides great results. We are also working with ReactJS as it provides a solid user interface that can provide the type of interaction we want people to have with our app. For the back-end, we are using Postman for API testing because it is a simple tool that provides nice feedback on HTTP requests as well as the responses.
 
 ## How Our Solution Works
-By being able to provide a visual tool to see what houses have what building code violations, it helps buyers and renters of Prince George's County to be able to address certain issues and comply with county standards. With easy access to this information, people will be able to make necessary changes to help put their homes on the market without legal issues.
+By being able to provide a visual tool with search feature to see what houses have what building code violations, it helps buyers and renters of Prince George's County to be able to address certain issues and comply with county standards. With easy access to this information, people will be able to make necessary changes to help put their homes on the market without legal issues.
 
 ## Challenges and Impact of Design
 One of the challenges we faced was working with ReactJS. Since this tool was not fully introduced in the class, we had to learn a couple of things on our own. In the end, we implemented a responsive nav bar that allowed for easy interaction.
