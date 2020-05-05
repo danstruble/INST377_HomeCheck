@@ -1,0 +1,19 @@
+# HomeCheck User Manual
+The HomeCheck web application is designed to help Prince George's County buyers and renters to have easy accessibility on building code violations of houses in Prince George's County.
+
+## HomeCheck Website Link
+Head to the HomeCheck website through this link: *need to add*
+> If prompted by browser, please allow the website to access your location information.
+
+## Home Page
+*need to add*
+
+## Documentation Page
+The Documentation Page provides information on the technologies that we have used to develop our application and some other notes that can be helpful for those developers who are looking to work with the project.
+
+## About Page
+The About Page essentially provides information for those who are interested to learn more about this project. It includes a detailed description of the project, explaining the motivates behind the project. It also includes information of each member of the developer team. 
+
+## Contact Us Page
+The Contact Us Page *need to add*
+
