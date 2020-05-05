@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
-  "author": "Alex Leitch",
+  "author": "Dan Struble",
   "license": "CC-BY-SA-4.0",
   "dependencies": {
     "babel-eslint": "^10.1.0",
