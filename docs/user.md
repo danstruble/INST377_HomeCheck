@@ -15,5 +15,5 @@ The Documentation Page provides information on the technologies that we have use
 The About Page essentially provides information for those who are interested to learn more about this project. It includes a detailed description of the project, explaining the motivates behind the project. It also includes information of each member of the developer team. 
 
 ## Contact Us Page
-The Contact Us Page *need to add*
+The Contact Us Page provides contact information that allows those who wish to reach out to us for any issue, assistance, inquiry, etc. they may have.
 
