@@ -25,7 +25,7 @@ const ContactForm = () => (
       </article>
     </div>
   </div>
-    
+
 );
 
 export default ContactForm;

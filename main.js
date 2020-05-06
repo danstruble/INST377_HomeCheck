@@ -1,5 +1,5 @@
 const btn = document.querySelector('button');
-const map_style = 'mapbox/dark-v10';
+const mapStyle = 'mapbox/dark-v10';
 const mymap = L.map('map').setView([38.9935252, -76.9453], 10);
 function createMap(mode) {
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -12,7 +12,7 @@ function createMap(mode) {
   }).addTo(mymap);
 }
 
-createMap(map_style);
+createMap(mapStyle);
 
 const redIcon = new L.Icon({
   iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',

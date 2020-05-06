@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Header from './Header';
 import Nav from './Nav';
 import SideDrawer from './SideDrawer';
@@ -6,7 +6,9 @@ import Burger from './Burger';
 
 
 class Layout extends React.Component {
+
   constructor(props) {
+
     super(props);
     this.state = {
       sideDrawerOpen: false
@@ -18,15 +20,18 @@ class Layout extends React.Component {
 
 
   drawerToggleClickHandler = () => {
+
     this.setState({
       sideDrawerOpen: !this.state.sideDrawerOpen
     });
+
   };
 
   renderSideBar = () => (this.state.sideDrawerOpen ? <SideDrawer /> : null)
 
 
   render() {
+
     return (
       <div>
         <Header />
@@ -45,6 +50,7 @@ class Layout extends React.Component {
         </div>
       </div>
     );
+
   }
 
 }

@@ -3,9 +3,12 @@ import Link from 'next/link';
 
 
 const SideDrawer = (props) => {
+
   let drawerClasses = 'nav';
   if (props.show) {
+
     drawerClasses = 'nav-activate';
+
   }
   return (
     <nav className ="side-drawer">
@@ -25,6 +28,7 @@ const SideDrawer = (props) => {
       </ul>
     </nav>
   )
+
 };
 
 export default SideDrawer;
