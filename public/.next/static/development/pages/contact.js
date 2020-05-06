@@ -828,10 +828,10 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcontact&absolutePagePath=C%3A%5CUsers%5CKevin%20Neggo%5Cdocuments%5Cgithub%5Cinst377_homecheck%5Cpublic%5Cpages%5Ccontact.js&hotRouterUpdates=true!./":
-/*!**********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcontact&absolutePagePath=C%3A%5CUsers%5CKevin%20Neggo%5Cdocuments%5Cgithub%5Cinst377_homecheck%5Cpublic%5Cpages%5Ccontact.js&hotRouterUpdates=true ***!
-  \**********************************************************************************************************************************************************************************************************************************************/
+/***/ "../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcontact&absolutePagePath=C%3A%5CUsers%5CMJS%5CDocuments%5CGitHub%5CINST377_HomeCheck%5Cpublic%5Cpages%5Ccontact.js&hotRouterUpdates=true!./":
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcontact&absolutePagePath=C%3A%5CUsers%5CMJS%5CDocuments%5CGitHub%5CINST377_HomeCheck%5Cpublic%5Cpages%5Ccontact.js&hotRouterUpdates=true ***!
+  \************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5354,14 +5354,14 @@ var Contact = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 
-/***/ 2:
-/*!*************************************************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fcontact&absolutePagePath=C%3A%5CUsers%5CKevin%20Neggo%5Cdocuments%5Cgithub%5Cinst377_homecheck%5Cpublic%5Cpages%5Ccontact.js&hotRouterUpdates=true ***!
-  \*************************************************************************************************************************************************************************************************/
+/***/ 5:
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fcontact&absolutePagePath=C%3A%5CUsers%5CMJS%5CDocuments%5CGitHub%5CINST377_HomeCheck%5Cpublic%5Cpages%5Ccontact.js&hotRouterUpdates=true ***!
+  \***************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fcontact&absolutePagePath=C%3A%5CUsers%5CKevin%20Neggo%5Cdocuments%5Cgithub%5Cinst377_homecheck%5Cpublic%5Cpages%5Ccontact.js&hotRouterUpdates=true! */"../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcontact&absolutePagePath=C%3A%5CUsers%5CKevin%20Neggo%5Cdocuments%5Cgithub%5Cinst377_homecheck%5Cpublic%5Cpages%5Ccontact.js&hotRouterUpdates=true!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fcontact&absolutePagePath=C%3A%5CUsers%5CMJS%5CDocuments%5CGitHub%5CINST377_HomeCheck%5Cpublic%5Cpages%5Ccontact.js&hotRouterUpdates=true! */"../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fcontact&absolutePagePath=C%3A%5CUsers%5CMJS%5CDocuments%5CGitHub%5CINST377_HomeCheck%5Cpublic%5Cpages%5Ccontact.js&hotRouterUpdates=true!./");
 
 
 /***/ }),
@@ -5377,5 +5377,5 @@ module.exports = dll_e6a94776c4176f860599;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[5,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=contact.js.map

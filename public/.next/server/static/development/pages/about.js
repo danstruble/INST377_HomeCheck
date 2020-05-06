@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 7);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1805,6 +1805,17 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "../node_modules/
 
 /***/ }),
 
+/***/ "./components/AboutContainer.js":
+/*!**************************************!*\
+  !*** ./components/AboutContainer.js ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
 /***/ "./components/Burger.js":
 /*!******************************!*\
   !*** ./components/Burger.js ***!
@@ -1831,52 +1842,6 @@ const Burger = props => __jsx("button", {
 }));
 
 /* harmony default export */ __webpack_exports__["default"] = (Burger);
-
-/***/ }),
-
-/***/ "./components/ContactForm.js":
-/*!***********************************!*\
-  !*** ./components/ContactForm.js ***!
-  \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-const ContactForm = () => __jsx("div", {
-  className: "container"
-}, __jsx("div", {
-  className: "wrapper"
-}, __jsx("header", {
-  className: "contactHeader"
-}, __jsx("h1", null, "Contact Us"), __jsx("p", null, "Please reach out to us if you have any questions!")), __jsx("article", {
-  className: "contactMain"
-}, __jsx("form", null, __jsx("ul", null, __jsx("li", null, __jsx("input", {
-  type: "text",
-  id: "name",
-  name: "user_name",
-  placeholder: "Name",
-  maxLength: "140"
-})), __jsx("li", null, __jsx("input", {
-  type: "text",
-  id: "email",
-  name: "user_email",
-  placeholder: "E-Mail"
-})), __jsx("li", null, __jsx("input", {
-  type: "text",
-  id: "message",
-  name: "user_message",
-  placeholder: "Message"
-})))), __jsx("button", {
-  type: "submit"
-}, "Send"))));
-
-/* harmony default export */ __webpack_exports__["default"] = (ContactForm);
 
 /***/ }),
 
@@ -2054,45 +2019,46 @@ const SideDrawer = props => {
 
 /***/ }),
 
-/***/ "./pages/contact.js":
-/*!**************************!*\
-  !*** ./pages/contact.js ***!
-  \**************************/
+/***/ "./pages/about.js":
+/*!************************!*\
+  !*** ./pages/about.js ***!
+  \************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Contact; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return About; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Layout */ "./components/Layout.js");
-/* harmony import */ var _components_ContactForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/ContactForm */ "./components/ContactForm.js");
+/* harmony import */ var _components_AboutContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/AboutContainer */ "./components/AboutContainer.js");
+/* harmony import */ var _components_AboutContainer__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_AboutContainer__WEBPACK_IMPORTED_MODULE_2__);
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-class Contact extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
+class About extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   constructor() {
     super();
   }
 
   render() {
-    return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], null, __jsx(_components_ContactForm__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+    return __jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_1__["default"], null, "This is the about page");
   }
 
 }
 
 /***/ }),
 
-/***/ 7:
-/*!********************************!*\
-  !*** multi ./pages/contact.js ***!
-  \********************************/
+/***/ 5:
+/*!******************************!*\
+  !*** multi ./pages/about.js ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\MJS\Documents\GitHub\INST377_HomeCheck\public\pages\contact.js */"./pages/contact.js");
+module.exports = __webpack_require__(/*! C:\Users\MJS\Documents\GitHub\INST377_HomeCheck\public\pages\about.js */"./pages/about.js");
 
 
 /***/ }),
@@ -2164,4 +2130,4 @@ module.exports = require("url");
 /***/ })
 
 /******/ });
-//# sourceMappingURL=contact.js.map
+//# sourceMappingURL=about.js.map
