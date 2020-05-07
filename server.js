@@ -6,6 +6,8 @@ const next = require('next');
 const dev = process.env.NODE_ENV !== 'production';
 const server = next({ dev, dir: './public' });
 const handle = server.getRequestHandler();
+require('dotenv').config();
+
 server
   .prepare()
   .then(() => {
@@ -26,12 +28,11 @@ server
     app.use(express.static('public/build'));
 
     async function getCoords(location) {
-      let apiKey = "KEY";
+      let apiKey = process.env.API_KEY;
       let locationURL = "http://open.mapquestapi.com/geocoding/v1/address?key=" + apiKey + "&location=" + location.address.street_number + "+" + location.address.street_name + "+" + location.address.street_suffix + "," + location.address.city + "," + location.address.state + "," + location.address.zip;
       let coords;
       await fetch(locationURL)
         .then((data) => {
-          console.log(data);
           return data;
         })
         .then((response) => response.json())
@@ -78,7 +79,7 @@ server
         .then((addressDict) => {
           let locationArray = [];
           for (let key in addressDict) {
-            if (locationArray.length < 50) {
+            if (locationArray.length < 10) {
               locationArray.push(addressDict[key]);
             }
           }
@@ -86,9 +87,8 @@ server
         })
         .then(async (locationArray) => {
           let geo = [];
-          for (location in locationArray) {
+          for (const location of locationArray) {
             let singleLoc = {};
-
             singleLoc['address'] = location.address;
             singleLoc['count'] = location.count;
             singleLoc['violations'] = location.violations;

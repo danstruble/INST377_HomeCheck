@@ -24,9 +24,8 @@ export default class IndexPage extends React.Component {
     fetch('/api')
       .then((data) => data.json())
       .then((data) => {
-        console.log(data)
         this.setState({
-          geoCoord: data.data
+          geoCoord: data.data.map((geoData) => geoData.latLng)
         })
       })
   }
@@ -34,13 +33,13 @@ export default class IndexPage extends React.Component {
   renderLeaflet() {
     const geoCoords = this.state.geoCoord;
     return (
-      <Map center={position} zoom={13}>
+      <Map center={[38.7849, -76.8721]} zoom={9.5}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
         />
-        {geoCoords.map((coords) => (
-          <Marker position={coords} />
+        {geoCoords.map((coords, idx) => (
+          <Marker position={[parseFloat(coords.lat), parseFloat(coords.lng)]} key={idx} />
         ))}
       </Map>
     )

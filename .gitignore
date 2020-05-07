@@ -1,6 +1,7 @@
 node_modules
 cache
 .next
+.env
 
 public/.next/build-manifest.json
 public/.next/static/development/pages/_app.js
