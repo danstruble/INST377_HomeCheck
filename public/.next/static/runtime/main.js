@@ -941,6 +941,7 @@ function connect(options) {
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
       (0, _sourceMapSupport.rewriteStacktrace)(error, "C:\\Users\\dston\\Documents\\GitHub\\INST377_HomeCheck\\public\\.next");
+
       return error;
     }
   };

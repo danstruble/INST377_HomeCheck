@@ -171,15 +171,10 @@ h3 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #2f3640;
+  background: #383838;
   height: 40px;
-  border-radius: 40px;
+  border-radius: 40%;
   padding: 10px;
-}
-
-.search-box:hover > .search-txt{
-  width: 240px;
-  padding: 0 6px;
 }
 
 .search-box:hover > .search-btn{
@@ -187,7 +182,7 @@ h3 {
 }
 
 .search-btn{
-  color: orange
+  color: orange;
   float:right;
   width: 40px;
   height: 40px;
@@ -208,10 +203,20 @@ h3 {
   font-size: 16px;
   transition: 0.4s;
   line-height: 40px;
-  width: 0px;
+  width: 240px;
 }
 
+.map{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
 
+.leaflet-container{
+  width: 800px;
+  height: 400px;
+}
 
 .code {
   background-color: rgb(255, 231, 202);
@@ -315,7 +320,6 @@ h3 {
   background: #fff;
   border: 2px dotted #444;
   flex-grow: 2;
-  flex: 0 0 200px;
   padding: 10px;
   overflow-wrap: break-word;
   margin: 25px 50px;

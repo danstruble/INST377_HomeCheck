@@ -3,8 +3,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 const Search = () => (
   <div className = 'search-box'>
-    <input className='search-txt' type='text' name="" placeholder='Type to search'>
-    </input>
+    <input className='search-txt' type='text' name="" placeholder='Type to search' />
     <a className='search-btn' href="#">
       <FontAwesomeIcon icon="fa-search" />
     </a>
