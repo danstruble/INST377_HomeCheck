@@ -174,7 +174,7 @@ h3 {
   transform: translate(-50%, -50%);
   background: #383838;
   height: 40px;
-  border-radius: 40%;
+  border-radius: 40px;
   padding: 10px;
 }
 
@@ -254,11 +254,6 @@ h3 {
   text-align: center;
 
 }
-
-.wrapper div{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
 
 .wrapperTest{
   display: flex;

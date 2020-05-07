@@ -43,7 +43,7 @@ export default class IndexPage extends React.Component {
             />
             <Search />
             <div className="map">
-              {this.renderLeaflet()}
+               {this.renderLeaflet()}
             </div>
             
           </div>
