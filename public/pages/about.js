@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import AboutContainer from '../components/AboutContainer';
+import AboutContent from '../components/AboutContent';
 
 export default class About extends React.Component {
 
@@ -13,7 +13,7 @@ export default class About extends React.Component {
   render() {
 
     return (<Layout>
-      <AboutContainer></AboutContainer>
+      <AboutContent></AboutContent>
     </Layout>
     );
 
