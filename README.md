@@ -2,7 +2,7 @@
 HomeCheck is a web application built on HTML/CSS/JS with NodeJS and Express framework that is designed to help Prince George's County buyers and renters to have easy accessibility on building code violations of houses in Prince George's County. 
 
 ## Heroku Instance
-*need to add*
+The live demo of our application is hosted on Heroku, at this link: https://home-check-app.herokuapp.com/
 
 ## Target Browsers
 While HomeCheck is built to be adaptive on browsers of any computer and mobile OS systems, we have only tested it on Chrome using Windows, iOS and Android. The version numbers are listed below:
