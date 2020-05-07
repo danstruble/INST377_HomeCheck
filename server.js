@@ -43,6 +43,21 @@ server
       return coords;
     }
 
+    function getRandomKey(collection) {
+      let keys = Object.keys(collection);
+      return keys[Math.floor(Math.random() * keys.length)];
+    }
+
+    function randomLocations(addresses,list){
+      let randomKey = getRandomKey(addresses);
+      list.push(addresses[randomKey]);
+
+      if(list.length < 10){
+        randomLocations(addresses,list);
+      }
+      return list;
+    }
+
     function processDataForFrontEnd(req, res) {
       const baseURL = 'https://data.princegeorgescountymd.gov/resource/9hyf-46qb.json'; // Enter the URL for the data you would like to retrieve here
 
@@ -76,13 +91,9 @@ server
           });
           return addressDict;
         })
-        .then((addressDict) => {
-          let locationArray = [];
-          for (let key in addressDict) {
-            if (locationArray.length < 10) {
-              locationArray.push(addressDict[key]);
-            }
-          }
+        .then(async (addressDict) => {
+          //randomly generates coordinates
+          locationArray = await randomLocations(addressDict,[]);
           return locationArray;
         })
         .then(async (locationArray) => {
