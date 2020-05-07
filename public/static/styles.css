@@ -346,3 +346,57 @@ h3 {
   position: relative;
   top: 1px;
 }
+.about-container {
+  display:flex;
+  justify-content:center;
+}
+
+.about-wrapper {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.one, .two, .three, .four, .five {
+  font-family: 'IBM Plex Sans', sans-serif;
+  display:flex;
+  justify-content:center;
+  flex-direction:column;
+  height:300px;
+  width:250px;
+  background-color:rgb(135,206,250, .4);
+  margin:10px;
+  padding:10px;
+}
+
+.img1, .img2, .img3, .img4, .img5 {
+  height:150px;
+  width:100px;
+  border-color:black;
+  border-width:2px;
+}
+
+.line-one, .line-two, .line-three {
+  display:flex;
+  flex-direction:row;
+}
+
+.line-one {
+  display:flex;
+  justify-content:center;
+}
+
+.line-two {
+  display:flex;
+  justify-content:center;
+}
+
+.line-three {
+  display:flex;
+  justify-content:center;
+}
+
+.about-header {
+  display:flex;
+  justify-content:center;
+}
