@@ -3,10 +3,8 @@ import React from 'react';
 const ContactForm = () => (
   <div className="container">
     <div className = "wrapper">
-      <header className = "contactHeader">
         <h1>Contact Us</h1>
         <p>Please reach out to us if you have any questions!</p>
-      </header>
       <article className = "contactMain">
         <form>
           <ul>

@@ -1,9 +1,9 @@
 import React from "react";
 
-const AboutContainer = () => (
+const AboutContent = () => (
   <div className="container">
     <div className="wrapper">
-      <h1>About the Project</h1>
+      <h1>We are HomeCheck</h1>
       <div className="content">
         <p>
           Building code violations are problematic to prospective buyers and
@@ -23,7 +23,7 @@ const AboutContainer = () => (
           our application before deciding on any home property.
         </p>
       </div>
-      <h1>About the Team</h1>
+      <h1>Meet the Team</h1>
       <div className="content">
         <div className="line-two">
           <div className="one">
@@ -136,4 +136,4 @@ const AboutContainer = () => (
   </div>
 );
 
-export default AboutContainer;
+export default AboutContent;
