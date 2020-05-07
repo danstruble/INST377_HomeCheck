@@ -1,0 +1,353 @@
+/* Set document default styles for text */
+body {
+  font-size: 18px;
+  color: #444;
+  background: #eee;
+  box-sizing: border-box;
+  margin:0px;
+  padding:0px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2
+}
+
+/* End document default styles */
+.topBar {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #383838;
+}
+
+.innerTopBar{
+  width: 1000px;
+  height: 100%;
+  display:flex;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.logoContainer{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logoContainer h1{
+  color: white;
+  height:100%;
+  display: flex;
+  align-items: center;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 32px;
+  font-weight:100;
+  
+}
+
+.logoContainer span{
+  font-weight: 700;
+}
+
+.navContain{
+  display: flex;
+  align-items: center;
+}
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin:0px;
+  padding:0px;
+  
+}
+
+.nav a {
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+  text-decoration: none;
+}
+
+
+.nav a li{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: white;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 16px;
+}
+
+.burger-toggle{
+  display:none;
+  background: transparent;
+  border: none;
+}
+
+.burger-toggle div{
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  margin:5px;
+  border-radius: 3px;
+}
+
+
+@media screen and (max-width: 768px){
+  body{
+    overflow-x: hidden;
+  }
+
+  .innerTopBar{
+    z-index: 100;
+  }
+
+  .logoContainer{
+    display:flex;
+    justify-content: center;
+  }
+  .nav{
+    position: absolute;
+    right: 0px;
+    height:92vh;
+    top: 8vh;
+    background-color: #383838;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    z-index: 1;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .nav a{
+    margin: 30px;
+  }
+
+  .nav a li{
+    opacity: 0;;
+  }
+
+  .burger-toggle{
+    display: block;
+    flex:none;
+    margin: 10px;
+    cursor: pointer;
+  }
+}
+
+.nav-active{
+  transform: translateX(0%);
+}
+
+.side-drawer{
+  position: absolute;
+  right: 0px;
+  height:92vh;
+  top: 8vh;
+  background-color: #383838;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  z-index: 1;
+  transform: translateX(100%);
+  transition: transform 0.5s ease-in;
+}
+
+.homewriter{
+  color: black;
+}
+
+.search-box{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #383838;
+  height: 40px;
+  border-radius: 40%;
+  padding: 10px;
+}
+
+.search-box:hover > .search-btn{
+  background: white;
+}
+
+.search-btn{
+  color: orange;
+  float:right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.search-txt{
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 240px;
+}
+
+.map{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.leaflet-container{
+  width: 800px;
+  height: 400px;
+}
+
+.code {
+  background-color: rgb(255, 231, 202);
+  font-family: 'Courier New', Courier, monospace;
+  color: dimgrey;
+}
+
+.container {
+  position: absolute;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+#chartContainer {
+  width: 800px;
+  height: 600px;
+}  
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  width: 80%;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background: #fefefe;
+  border: 1px dashed #ccc;
+  margin: 25px;
+  text-align: center;
+
+}
+
+.wrapperTest{
+  display: flex;
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+}
+
+.wrapper div {
+  border-radius: 14px;
+}
+
+.contactHeader{
+  color: black;
+  margin-top: 50px;
+}
+
+.contactHeader h1{
+  
+  font-size: 36px;
+}
+
+.contactMain{
+  margin-top: 20px;
+  margin-bottom: 145px;
+  width: 40%;
+  text-align: center;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.contactMain form{
+  line-height: 1.5;
+}
+
+.contactMain form ul{
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+}
+
+.contactMain form input{
+  font-size: 16px;
+  width: 100%;
+  margin: 30px 0;
+  background: rgba(0,0,0,0);
+  border: none;
+  border-bottom: 1px solid grey;
+}
+
+.contactMain button{
+  font-size: 16px;
+  color: white;
+  padding: 20px 32px;
+  background: #383838;
+  border: none;
+  border-radius: 4px;
+}
+
+.instructions {
+  padding: 0 25px;
+}
+
+.content {
+  background: #fff;
+  border: 2px dotted #444;
+  flex-grow: 2;
+  flex: 0 0 200px;
+  padding: 10px;
+  overflow-wrap: break-word;
+  margin: 25px 50px;
+}
+
+.button {
+  background-color: #ffc477;
+  -moz-border-radius: 11px;
+  -webkit-border-radius: 11px;
+  border-radius: 11px;
+  border: 2px solid #eeb44f;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Verdana;
+  font-size: 14px;
+  padding: 10px 17px;
+  text-decoration: none;
+  text-shadow: 0px 1px 1px #cc9f52;
+}
+
+.button:hover {
+  background-color: coral;
+  border: 2px solid rgb(216, 91, 46);
+}
+
+.button:active {
+  position: relative;
+  top: 1px;
+}

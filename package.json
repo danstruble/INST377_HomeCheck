@@ -7,11 +7,22 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
-  "author": "Alex Leitch",
+  "author": "Dan Struble",
   "license": "CC-BY-SA-4.0",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-regular-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "babel-eslint": "^10.1.0",
     "express": "^4.17.1",
-    "node-fetch": "^2.6.0"
+    "leaflet": "^1.6.0",
+    "next": "^9.3.6",
+    "node-fetch": "^2.6.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-leaflet": "^2.7.0",
+    "react-leaflet-universal": "^2.2.1"
   },
   "devDependencies": {
     "eslint": "^6.5.1",
