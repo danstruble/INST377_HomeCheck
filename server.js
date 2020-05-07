@@ -19,10 +19,25 @@ app.use(express.json());
 // And the ability to serve some files publicly, like our HTML.
 app.use(express.static('public'));
 
+async function getCoords(location) {
+  let apiKey = "KEY";
+  let locationURL = "http://open.mapquestapi.com/geocoding/v1/address?key=" + apiKey + "&location=" + location.address.street_number + "+" + location.address.street_name + "+" + location.address.street_suffix + "," + location.address.city + "," + location.address.state + "," + location.address.zip;
+  
+  let coords;
+  await fetch(locationURL)
+    .then((response) => response.json())
+    .then((response) => {
+      return response.results[0].locations[0].latLng;
+    })
+    .then((response) => coords = response);
+  return coords; 
+}
+
 function processDataForFrontEnd(req, res) {
   const baseURL = 'https://data.princegeorgescountymd.gov/resource/9hyf-46qb.json'; // Enter the URL for the data you would like to retrieve here
 
   let addressDict = {};
+  let geoArray = [];
   // Your Fetch API call starts here
   // Note that at no point do you "return" anything from this function -
   // it instead handles returning data to your front end at line 34.
@@ -42,7 +57,7 @@ function processDataForFrontEnd(req, res) {
               }
             }
             else {
-              let address = (entry.street_number + " " + entry.street_name + " " + entry.street_type + " " + entry.city + " " + entry.state + ", " + entry.zip_code);
+              let address = {'street_number':entry.street_number, 'street_name':entry.street_name, 'street_suffix':entry.street_type, 'city':entry.city, 'state':entry.state, 'zip':entry.zip_code};
               addressDict[entry.property_id] = {'address':address,'count':1,'violations':[{'violationID':entry.violation_id,'inspectionID':entry.inspection_id,'code':entry.violation_code,'desc':entry.violation_description}]}
             }
           }
@@ -51,12 +66,30 @@ function processDataForFrontEnd(req, res) {
           }
           
         });
-        res.json({data:addressDict});
         return addressDict;
       })
       .then((addressDict) => {
-        //geocoding goes here
+        let locationArray = [];
+        for(let key in addressDict){
+          if(locationArray.length < 50) {
+            locationArray.push(addressDict[key]);
+          }
+        }
+        return locationArray;
       })
+      .then(async(locationArray) => {
+        let geo = [];
+        for (const location of locationArray) {
+          let singleLoc = {};
+          singleLoc['address'] = location.address;
+          singleLoc['count'] = location.count;
+          singleLoc['violations'] = location.violations;
+          singleLoc['latLng'] = await getCoords(location);
+          geo.push(singleLoc);
+        };
+        return geo;
+      })
+      .then((geo) => res.json({data:geo}) );
 }
 
 // This is our first route on our server.
