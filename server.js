@@ -37,7 +37,6 @@ function processDataForFrontEnd(req, res) {
   const baseURL = 'https://data.princegeorgescountymd.gov/resource/9hyf-46qb.json'; // Enter the URL for the data you would like to retrieve here
 
   let addressDict = {};
-  let geoArray = [];
   // Your Fetch API call starts here
   // Note that at no point do you "return" anything from this function -
   // it instead handles returning data to your front end at line 34.
