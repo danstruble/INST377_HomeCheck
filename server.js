@@ -62,7 +62,7 @@ function processDataForFrontEnd(req, res) {
                   }
                 }
               else {
-                let address = (entry.street_number + " " + entry.street_name + " " + entry.street_type + " " + entry.city + " " + entry.state + ", " + entry.zip_code);
+                let address = {'street_number':entry.street_number,'street_name':entry.street_name,'street_suffix':entry.street_type,'city':entry.city,'state':entry.state,'zip':entry.zip_code};
                 addressDict[entry.property_id] = {'address':address,'count':1,'violations':[{'violationID':entry.violation_id,'inspectionID':entry.inspection_id,'code':entry.violation_code,'desc':entry.violation_description}]}
               }
             }
