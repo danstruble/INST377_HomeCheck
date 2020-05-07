@@ -318,6 +318,7 @@ h3 {
 }
 
 .content {
+  width: 80%;
   background: #fff;
   border: 2px dotted #444;
   flex-grow: 2;
@@ -351,25 +352,14 @@ h3 {
   position: relative;
   top: 1px;
 }
-.about-container {
-  display:flex;
-  justify-content:center;
-}
-
-.about-wrapper {
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
 
 .one, .two, .three, .four, .five {
   font-family: 'IBM Plex Sans', sans-serif;
-  display:flex;
   justify-content:center;
   flex-direction:column;
   align-items:space-around;
   height:400px;
-  width:325px;
+  width:200px;
   background-color:rgb(135,206,250, .4);
   margin:10px;
   padding-left:15px;
@@ -378,11 +368,6 @@ h3 {
   padding-bottom:25px;
 }
 
-.project-about {
-  background-color:rgba(68, 118, 255, 0.4);
-  margin:10px;
-  padding:10px;
-}
 
 .img1, .img2, .img3, .img4, .img5 {
   display:flex;
@@ -393,24 +378,7 @@ h3 {
   display:flex;
   flex-direction:row;
   font-size:12pt;
+  justify-content:center;
+
 }
 
-.line-one {
-  display:flex;
-  justify-content:center;
-}
-
-.line-two {
-  display:flex;
-  justify-content:center;
-}
-
-.line-three {
-  display:flex;
-  justify-content:center;
-}
-
-.about-header {
-  display:flex;
-  justify-content:center;
-}
