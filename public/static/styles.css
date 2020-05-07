@@ -4,15 +4,15 @@ body {
   color: #444;
   background: #eee;
   box-sizing: border-box;
-  margin:0px;
-  padding:0px;
-  font-family: 'IBM Plex Sans', sans-serif;
+  margin: 0px;
+  padding: 0px;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 h1,
 h2,
 h3 {
-  line-height: 1.2
+  line-height: 1.2;
 }
 
 /* End document default styles */
@@ -25,37 +25,36 @@ h3 {
   background-color: #383838;
 }
 
-.innerTopBar{
+.innerTopBar {
   width: 1000px;
   height: 100%;
-  display:flex;
+  display: flex;
   justify-content: space-around;
   margin: 0 auto;
 }
 
-.logoContainer{
+.logoContainer {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.logoContainer h1{
+.logoContainer h1 {
   color: white;
-  height:100%;
+  height: 100%;
   display: flex;
   align-items: center;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 32px;
-  font-weight:100;
-  
+  font-weight: 100;
 }
 
-.logoContainer span{
+.logoContainer span {
   font-weight: 700;
 }
 
-.navContain{
+.navContain {
   display: flex;
   align-items: center;
 }
@@ -63,9 +62,8 @@ h3 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin:0px;
-  padding:0px;
-  
+  margin: 0px;
+  padding: 0px;
 }
 
 .nav a {
@@ -75,48 +73,46 @@ h3 {
   text-decoration: none;
 }
 
-
-.nav a li{
+.nav a li {
   display: flex;
   flex-direction: row;
   justify-content: center;
   color: white;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
   font-size: 16px;
 }
 
-.burger-toggle{
-  display:none;
+.burger-toggle {
+  display: none;
   background: transparent;
   border: none;
 }
 
-.burger-toggle div{
+.burger-toggle div {
   width: 25px;
   height: 2px;
   background-color: white;
-  margin:5px;
+  margin: 5px;
   border-radius: 3px;
 }
 
-
-@media screen and (max-width: 768px){
-  body{
+@media screen and (max-width: 768px) {
+  body {
     overflow-x: hidden;
   }
 
-  .innerTopBar{
+  .innerTopBar {
     z-index: 100;
   }
 
-  .logoContainer{
-    display:flex;
+  .logoContainer {
+    display: flex;
     justify-content: center;
   }
-  .nav{
+  .nav {
     position: absolute;
     right: 0px;
-    height:92vh;
+    height: 92vh;
     top: 8vh;
     background-color: #383838;
     display: flex;
@@ -128,30 +124,30 @@ h3 {
     transition: transform 0.5s ease-in;
   }
 
-  .nav a{
+  .nav a {
     margin: 30px;
   }
 
-  .nav a li{
-    opacity: 0;;
+  .nav a li {
+    opacity: 0;
   }
 
-  .burger-toggle{
+  .burger-toggle {
     display: block;
-    flex:none;
+    flex: none;
     margin: 10px;
     cursor: pointer;
   }
 }
 
-.nav-active{
+.nav-active {
   transform: translateX(0%);
 }
 
-.side-drawer{
+.side-drawer {
   position: absolute;
   right: 0px;
-  height:92vh;
+  height: 92vh;
   top: 8vh;
   background-color: #383838;
   display: flex;
@@ -163,11 +159,11 @@ h3 {
   transition: transform 0.5s ease-in;
 }
 
-.homewriter{
+.homewriter {
   color: black;
 }
 
-.search-box{
+.search-box {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -178,23 +174,23 @@ h3 {
   padding: 10px;
 }
 
-.search-box:hover > .search-btn{
+.search-box:hover > .search-btn {
   background: white;
 }
 
-.search-btn{
+.search-btn {
   color: orange;
-  float:right;
+  float: right;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   transition: 0.4s;
 }
 
-.search-txt{
+.search-txt {
   border: none;
   background: none;
   outline: none;
@@ -207,21 +203,21 @@ h3 {
   width: 240px;
 }
 
-.map{
+.map {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 5px;
 }
 
-.leaflet-container{
+.leaflet-container {
   width: 800px;
   height: 400px;
 }
 
 .code {
   background-color: rgb(255, 231, 202);
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   color: dimgrey;
 }
 
@@ -232,13 +228,13 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
 #chartContainer {
   width: 800px;
   height: 600px;
-}  
+}
 
 .wrapper {
   min-height: 100%;
@@ -252,10 +248,9 @@ h3 {
   border: 1px dashed #ccc;
   margin: 25px;
   text-align: center;
-
 }
 
-.wrapperTest{
+.wrapperTest {
   display: flex;
   flex-flow: row wrap;
   font-weight: bold;
@@ -266,45 +261,44 @@ h3 {
   border-radius: 14px;
 }
 
-.contactHeader{
+.contactHeader {
   color: black;
   margin-top: 50px;
 }
 
-.contactHeader h1{
-  
+.contactHeader h1 {
   font-size: 36px;
 }
 
-.contactMain{
+.contactMain {
   margin-top: 20px;
   margin-bottom: 145px;
   width: 40%;
   text-align: center;
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
-.contactMain form{
+.contactMain form {
   line-height: 1.5;
 }
 
-.contactMain form ul{
+.contactMain form ul {
   width: 100%;
   list-style: none;
   padding: 0;
   margin: 20px;
 }
 
-.contactMain form input{
+.contactMain form input {
   font-size: 16px;
   width: 100%;
   margin: 30px 0;
-  background: rgba(0,0,0,0);
+  background: rgba(0, 0, 0, 0);
   border: none;
   border-bottom: 1px solid grey;
 }
 
-.contactMain button{
+.contactMain button {
   font-size: 16px;
   color: white;
   padding: 20px 32px;
@@ -318,6 +312,7 @@ h3 {
 }
 
 .content {
+  width: 80%;
   background: #fff;
   border: 2px dotted #444;
   flex-grow: 2;
@@ -351,66 +346,40 @@ h3 {
   position: relative;
   top: 1px;
 }
-.about-container {
-  display:flex;
-  justify-content:center;
+
+.one,
+.two,
+.three,
+.four,
+.five {
+  font-family: "IBM Plex Sans", sans-serif;
+  justify-content: center;
+  flex-direction: column;
+  align-items: space-around;
+  height: 400px;
+  width: 200px;
+  background-color: rgb(135, 206, 250, 0.4);
+  margin: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
-.about-wrapper {
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+.img1,
+.img2,
+.img3,
+.img4,
+.img5 {
+  display: flex;
+  justify-content: center;
 }
 
-.one, .two, .three, .four, .five {
-  font-family: 'IBM Plex Sans', sans-serif;
-  display:flex;
-  justify-content:center;
-  flex-direction:column;
-  align-items:space-around;
-  height:400px;
-  width:325px;
-  background-color:rgb(135,206,250, .4);
-  margin:10px;
-  padding-left:15px;
-  padding-right:15px;
-  padding-top:25px;
-  padding-bottom:25px;
-}
-
-.project-about {
-  background-color:rgba(68, 118, 255, 0.4);
-  margin:10px;
-  padding:10px;
-}
-
-.img1, .img2, .img3, .img4, .img5 {
-  display:flex;
-  justify-content:center;
-}
-
-.line-one, .line-two, .line-three {
-  display:flex;
-  flex-direction:row;
-  font-size:12pt;
-}
-
-.line-one {
-  display:flex;
-  justify-content:center;
-}
-
-.line-two {
-  display:flex;
-  justify-content:center;
-}
-
+.line-one,
+.line-two,
 .line-three {
-  display:flex;
-  justify-content:center;
-}
-
-.about-header {
-  display:flex;
-  justify-content:center;
+  display: flex;
+  flex-direction: row;
+  font-size: 12pt;
+  justify-content: center;
 }

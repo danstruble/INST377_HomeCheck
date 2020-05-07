@@ -14,7 +14,7 @@ const ContactForm = () => (
               <input type="text" id="name" name="user_name" placeholder="Name" maxLength ="140" />
             </li>
             <li>
-              <input type = "text" id="email" name="user_email" placeholder = "E-Mail" />
+              <input type = "text" id="email" name="user_email" placeholder = "Email" />
             </li>
             <li>
               <input type = "text" id="message" name="user_message" placeholder = "Message" />
