@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import DocumentationContent from '../components/DocumentationContent';
 
 export default class Documentation extends React.Component {
 
@@ -11,7 +12,7 @@ export default class Documentation extends React.Component {
 
   render() {
 
-    return (<Layout>This is the documentation page.</Layout>);
+    return (<Layout><DocumentationContent /></Layout>);
 
   }
 

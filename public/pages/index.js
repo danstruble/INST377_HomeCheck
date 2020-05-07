@@ -1,8 +1,8 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import Home from '../components/Home';
 import Search from '../components/Search';
 import { Map, Marker, Popup, TileLayer} from 'react-leaflet-universal';
+import Typewriter from 'typewriter-effect';
 
 
 
@@ -33,12 +33,21 @@ export default class IndexPage extends React.Component {
     return (
       <Layout>
         <div className="container">
-          <div className="wrapper">
+          <div className="wrapperIndex">
+            <Typewriter
+              options = {{
+                strings: ['Type in address','or street name', 'or zip code', 'or just watch me type!'],
+                autoStart: true,
+                loop: true
+              }}
+            />
+            <Search />
             <div className="map">
               {this.renderLeaflet()}
             </div>
-            <Search />
+            
           </div>
+          
         </div>
         
       </Layout>
