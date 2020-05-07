@@ -29,7 +29,8 @@ server
 
     async function getCoords(location) {
       let apiKey = process.env.API_KEY;
-      let locationURL = "http://open.mapquestapi.com/geocoding/v1/address?key=" + apiKey + "&location=" + location.address.street_number + "+" + location.address.street_name + "+" + location.address.street_suffix + "," + location.address.city + "," + location.address.state + "," + location.address.zip;
+      let boundingBox = "&boundingBox=39.112823,-77.164707,38.581269,-76.496682"
+      let locationURL = "http://www.mapquestapi.com/geocoding/v1/address?key=" + apiKey + "&location=" + location.address.street_number + "+" + location.address.street_name + "+" + location.address.street_suffix + "," + location.address.city + "," + location.address.state + "," + location.address.zip + boundingBox;
       let coords;
       await fetch(locationURL)
         .then((data) => {
