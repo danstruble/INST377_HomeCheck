@@ -940,7 +940,7 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
-      (0, _sourceMapSupport.rewriteStacktrace)(error, "C:\\Users\\Kevin Neggo\\documents\\github\\inst377_homecheck\\public\\.next");
+      (0, _sourceMapSupport.rewriteStacktrace)(error, "C:\\Users\\Xiuwei Li\\OneDrive\\GitHub\\INST377_HomeCheck\\public\\.next");
       return error;
     }
   };
