@@ -25,10 +25,6 @@ server
     // And the ability to serve some files publicly, like our HTML.
     app.use(express.static('public/build'));
 
-    function processDataForFrontEnd(req, res) {
-      const baseURL = 'https://data.princegeorgescountymd.gov/resource/9hyf-46qb.json'; // Enter the URL for the data you would like to retrieve here
-
-
 async function getCoords(location) {
   let apiKey = "KEY";
   let locationURL = "http://open.mapquestapi.com/geocoding/v1/address?key=" + apiKey + "&location=" + location.address.street_number + "+" + location.address.street_name + "+" + location.address.street_suffix + "," + location.address.city + "," + location.address.state + "," + location.address.zip;
@@ -65,24 +61,14 @@ function processDataForFrontEnd(req, res) {
                     addressDict[entry.property_id].violations.push({'violationID':entry.violation_id,'inspectionID':entry.inspection_id,'code':entry.violation_code,'desc':entry.violation_description});
                   }
                 }
-                else {
-                  let address = (entry.street_number + " " + entry.street_name + " " + entry.street_type + " " + entry.city + " " + entry.state + ", " + entry.zip_code);
-                  addressDict[entry.property_id] = {'address':address,'count':1,'violations':[{'violationID':entry.violation_id,'inspectionID':entry.inspection_id,'code':entry.violation_code,'desc':entry.violation_description}]}
-                }
-              }
-              catch(err) {
-                console.log("Error processing entry: ",err,entry.property_id);
+              else {
+                let address = (entry.street_number + " " + entry.street_name + " " + entry.street_type + " " + entry.city + " " + entry.state + ", " + entry.zip_code);
+                addressDict[entry.property_id] = {'address':address,'count':1,'violations':[{'violationID':entry.violation_id,'inspectionID':entry.inspection_id,'code':entry.violation_code,'desc':entry.violation_description}]}
               }
             }
-            else {
-              let address = {'street_number':entry.street_number, 'street_name':entry.street_name, 'street_suffix':entry.street_type, 'city':entry.city, 'state':entry.state, 'zip':entry.zip_code};
-              addressDict[entry.property_id] = {'address':address,'count':1,'violations':[{'violationID':entry.violation_id,'inspectionID':entry.inspection_id,'code':entry.violation_code,'desc':entry.violation_description}]}
+            catch(err) {
+              console.log("Error processing entry: ",err,entry.property_id);
             }
-          }
-          catch(err) {
-            console.log("Error processing entry: ",err,entry.property_id);
-          }
-          
         });
         return addressDict;
       })
@@ -110,16 +96,16 @@ function processDataForFrontEnd(req, res) {
       .then((geo) => res.json({data:geo}) );
 }
 						
-    // This is our first route on our server.
-    // To access it, we can use a "GET" request on the front end
-    // by typing in: localhost:3000/api or 127.0.0.1:3000/api
-    app.get('/api', (req, res) => { processDataForFrontEnd(req, res); });
-    app.get('*', (req, res) => { 
-      return handle(req, res);
-    });
-    app.listen(port, () => console.log(`Example app listening on port ${port}!`));
-    })
-    .catch((err) => {
-    console.error(err.stack);
-    process.exit(1);
-    });
+// This is our first route on our server.
+// To access it, we can use a "GET" request on the front end
+// by typing in: localhost:3000/api or 127.0.0.1:3000/api
+app.get('/api', (req, res) => { processDataForFrontEnd(req, res); });
+app.get('*', (req, res) => { 
+  return handle(req, res);
+});
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+})
+.catch((err) => {
+console.error(err.stack);
+process.exit(1);
+});
