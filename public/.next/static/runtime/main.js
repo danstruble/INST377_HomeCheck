@@ -940,7 +940,11 @@ function connect(options) {
       error.name = err.name;
       error.stack = err.stack; // __NEXT_DIST_DIR is provided by webpack
 
+<<<<<<< Updated upstream
       (0, _sourceMapSupport.rewriteStacktrace)(error, "C:\\Users\\MJS\\Documents\\GitHub\\INST377_HomeCheck\\public\\.next");
+=======
+      (0, _sourceMapSupport.rewriteStacktrace)(error, "C:\\Users\\jonat\\Documents\\GitHub\\INST377_HomeCheck\\public\\.next");
+>>>>>>> Stashed changes
       return error;
     }
   };
