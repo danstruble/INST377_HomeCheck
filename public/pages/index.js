@@ -50,13 +50,14 @@ export default class IndexPage extends React.Component {
       <Layout>
         <div className="container">
           <div className="wrapperIndex">
-            <Typewriter
+            {/*<Typewriter
               options={{
                 strings: ['Type in address', 'or street name', 'or zip code', 'or just watch me type!'],
                 autoStart: true,
                 loop: true
               }}
             />
+            */}
             <Search />
             <div className="map">
               {this.renderLeaflet()}
