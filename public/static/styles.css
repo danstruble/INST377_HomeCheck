@@ -326,7 +326,6 @@ h3 {
   background: #fff;
   border: 2px dotted #444;
   flex-grow: 2;
-  flex: 0 0 200px;
   padding: 10px;
   overflow-wrap: break-word;
   margin: 25px 50px;
