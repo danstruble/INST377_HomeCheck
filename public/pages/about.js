@@ -12,7 +12,10 @@ export default class About extends React.Component {
 
   render() {
 
-    return (<Layout>This is the about page</Layout>);
+    return (<Layout>
+      <AboutContainer></AboutContainer>
+    </Layout>
+    );
 
   }
 
