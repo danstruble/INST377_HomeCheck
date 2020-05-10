@@ -12,34 +12,36 @@ export default class IndexPage extends React.Component {
   constructor() {
     super();
     this.state = {
-      geoCoord: []
+      violations: []
     }
   }
 
   componentDidMount() {
-    this.getGeoData()
+    this.getData()
   }
 
-  getGeoData() {
+  getData() {
     fetch('/api')
       .then((data) => data.json())
       .then((data) => {
         this.setState({
-          geoCoord: data.data.map((geoData) => geoData.latLng)
+          violations: data.data
         })
       })
   }
 
   renderLeaflet() {
-    const geoCoords = this.state.geoCoord;
+    const violations = this.state.violations;
     return (
       <Map center={[38.7849, -76.8721]} zoom={9.5}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
         />
-        {geoCoords.map((coords, idx) => (
-          <Marker position={[parseFloat(coords.lat), parseFloat(coords.lng)]} key={idx} />
+        {violations.map((violations, idx) => (
+          <Marker position={[parseFloat(violations.latLng.lat), parseFloat(violations.latLng.lng)]} key={idx}>
+            <Popup>{violations.address}<br />{violations.violations}</Popup>
+          </Marker>
         ))}
       </Map>
     )
@@ -51,11 +53,11 @@ export default class IndexPage extends React.Component {
         <div className="container">
           <div className="wrapperIndex">
             {/*<Typewriter
-              options={{
-                strings: ['Type in address', 'or street name', 'or zip code', 'or just watch me type!'],
-                autoStart: true,
-                loop: true
-              }}
+            options={{
+              strings: ['Type in address', 'or street name', 'or zip code', 'or just watch me type!'],
+              autoStart: true,
+              loop: true
+            }}
             />
             */}
             <Search />
