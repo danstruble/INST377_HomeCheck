@@ -40,9 +40,6 @@ Contains user manual and final report.
 >### /public
 Front-end folder that contains images, html, css, and js files.
 
->### /node_modules
-Contains installed packages.
-
 >### .env
 Contains the API key.
 
