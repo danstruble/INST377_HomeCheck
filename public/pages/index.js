@@ -3,6 +3,8 @@ import Layout from '../components/Layout';
 import Search from '../components/Search';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet-universal';
 import Typewriter from 'typewriter-effect';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -52,7 +54,7 @@ export default class IndexPage extends React.Component {
     return (
       <Layout>
         <div className="container">
-          <div className="wrapperIndex">
+          <div className="wrapper">
             {/*<Typewriter
             options={{
               strings: ['Type in address', 'or street name', 'or zip code', 'or just watch me type!'],
@@ -61,11 +63,15 @@ export default class IndexPage extends React.Component {
             }}
             />
             */}
-            <Search />
             <div className="map">
               {this.renderLeaflet()}
             </div>
-
+            <div className='search-box'>
+              <input className='search-txt' type='text' name="" placeholder='Type to search' />
+              <a className='search-btn' href="#">
+                <FontAwesomeIcon icon={faSearch} />
+              </a>
+            </div>
           </div>
 
         </div>
