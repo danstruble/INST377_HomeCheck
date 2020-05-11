@@ -2,11 +2,11 @@
 The HomeCheck web application is designed to help Prince George's County buyers and renters to have easy accessibility on building code violations of houses in Prince George's County.
 
 ## HomeCheck Website Link
-Head to the HomeCheck website through this link: *need to add*
+Head to the HomeCheck website through this link: http://home-check-app.herokuapp.com/
 > If prompted by browser, please allow the website to access your location information.
 
 ## Home Page
-*need to add*
+The Home Page is where users will be able to search up housing properties which will be visually displayed on a map with indicators. This page is where the main function of the app will be accessed. 
 
 ## Documentation Page
 The Documentation Page provides information on the technologies that we have used to develop our application and some other notes that can be helpful for those developers who are looking to work with the project.
