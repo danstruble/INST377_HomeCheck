@@ -443,10 +443,13 @@ nav {
     margin-left:  0;
     margin-right: 0;
   }
+
   .wrapper {
     margin-left: 0;
     margin-right: 0;
+    min-width: 256px;
   }
+
   .wrapper h1{
     font-size: 28px;
 
@@ -455,16 +458,17 @@ nav {
     margin-right: 0px;
     width:100%;
   }
+
   .section-one h1{
     font-size:28px;
     word-spacing: 0px;
   }
+
   .section-one h2{
     font-size:28px;
     word-spacing: 0px;
-
-
   }
+
   .section-two h6{
     overflow-wrap: break-word;
   }
