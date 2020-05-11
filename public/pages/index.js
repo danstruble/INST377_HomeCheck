@@ -5,13 +5,6 @@ import Typewriter from "typewriter-effect";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
-
-const pointerIcon = new Icon({
-  iconUrl: '../images/home.svg',
-  iconSize: [25, 25]
-})
-
-
 export default class IndexPage extends React.Component {
   constructor() {
     super();
@@ -29,7 +22,7 @@ export default class IndexPage extends React.Component {
       .then((data) => data.json())
       .then((data) => {
         this.setState({
-          violations: data.data,
+          violations: data.data
         });
       });
   }
@@ -50,7 +43,6 @@ export default class IndexPage extends React.Component {
               parseFloat(violations.latLng.lng),
             ]}
             key={idx}
-            icon={pointerIcon}
           >
             <Popup>
               {violations.address.street_number}{" "}
