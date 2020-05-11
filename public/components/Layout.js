@@ -35,9 +35,9 @@ class Layout extends React.Component {
     return (
       <div>
         <Header />
-        <div className='topBar'>
-          <div className='innerTopBar'>
-            <div className="logoContainer">
+        <div className='top-bar'>
+          <div className='inner-topbar'>
+            <div className="logo-container">
               <h1>Home<span>CHECK</span></h1>
             </div>
             <Nav drawerToggleClickHandler={this.drawerToggleClickHandler} />

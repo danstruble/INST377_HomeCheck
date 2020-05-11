@@ -1,8 +1,8 @@
 /* Set document default styles for text */
 body {
   font-size: 18px;
-  color: #444;
-  background: #eee;
+  color: #383838;
+  background: rgb(193, 231, 215);
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
@@ -22,36 +22,29 @@ p{
   margin-right: 15px;
 }
 
-.content {
-  width: 95%;
-  background: #fff;
-  flex-grow: 2;
-  overflow-wrap: break-word;
-}
-
 .wrapper {
-  display:flex;
+  display: flex;
   min-height: 100%;
   width: 960px;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   flex-direction: row;
-  background: #fefefe;
+  background: rgb(193, 231, 215);
   margin: 25px;
   text-align: center;
 }
 
-.topBar {
+.top-bar {
   width: 100%;
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #383838;
+  background-color: rgb(37, 175, 160);
 }
 
-.innerTopBar {
+.inner-topbar {
   width: 1000px;
   height: 100%;
   display: flex;
@@ -59,28 +52,28 @@ p{
   margin: 0 auto;
 }
 
-.logoContainer {
+.logo-container {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.logoContainer h1 {
-  color: white;
+.logo-container h1 {
+  color: #ffffff;
   height: 100%;
   display: flex;
   align-items: center;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 32px;
-  font-weight: 100;
+  font-size: 35px;
+  font-weight: 200;
+  letter-spacing: -2px;
 }
 
-.logoContainer span {
+.logo-container span {
   font-weight: 700;
 }
 
-.navContain {
+.nav-contain {
   display: flex;
   align-items: center;
 }
@@ -103,9 +96,9 @@ p{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  color: white;
-  font-family: "IBM Plex Sans", sans-serif;
-  font-size: 16px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .burger-toggle {
@@ -118,7 +111,7 @@ p{
   width: 25px;
   height: 2px;
   background-color: white;
-  margin: 5px;
+  margin: 5px;  
   border-radius: 3px;
 }
 
@@ -141,8 +134,8 @@ p{
   transition: transform 0.5s ease-in;
 }
 
-.homewriter {
-  color: black;
+.home-writer {
+  color: #383838;
 }
 
 .search-box {
@@ -212,25 +205,34 @@ p{
   align-items: flex-start;
 }
 
-#chartContainer {
+#chart-container {
   width: 800px;
   height: 600px;
 }
 
-.section_one {
+.section-one {
   align-items: flex-start;
   width: 88%;
   text-align: left;
 
 }
 
-.section_one h1{
+.section-one h1{
   line-height: 0.5;
   word-spacing: 2px;
-
+  font-weight: 700;
+  color: rgb(26, 182, 125);
+  font-size: 36px;
 }
 
-.contact_wrapper {
+.section-one h2{
+  line-height: 0.5;
+  word-spacing: 2px;
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.contact-wrapper {
   margin-top: 20px;
   display:flex;
   flex-direction: row;
@@ -239,32 +241,33 @@ p{
   flex-direction: row;
 }
 
-.section_two {
+
+.section-two {
   margin-right: 15px;
   width: 50%;
   text-align: left;
 }
 
-.section_two p{
+.section-two p{
   margin: 0;
   font-size: 15px;
-  color: #918f8f;
+  color: #414040;
 }
 
-.section_two h5{
+.section-two h5{
   margin-top: 70px;
   font-size: 13px;
   font-weight: 500;
-  color: #918f8f;
+  color: #414040;
 }
 
-.section_two h6{
+.section-two h6{
   margin-top: -30px;
   font-size: 14px;
   font-weight: 700;
 }
 
-.section_three {
+.section-three {
   margin-top: -45px;
   border-radius: 4px;
   text-align: left;
@@ -273,19 +276,25 @@ p{
   width: 45%;
 }
 
-.section_three p {
+.section-three p {
   margin-left: 0px;
 }
 
-.contactMain {
-  margin-top: 5px;
+.contact-main {
+  color: #383838;
+  margin-top: 20px;
   margin-bottom: 85px;
   text-align: center;
-  font-family: "IBM Plex Sans", sans-serif;
 }
 
-.contactMain form {
+.contact-main input::placeholder{
+  color:#414040;
+  opacity: 0.7;
+}
+
+.contact-main form {
   line-height: 1.5;
+  color: #383838;
 }
 
 .contactMain form ul {
@@ -294,16 +303,16 @@ p{
   padding: 0;
 }
 
-.contactMain form input {
+.contact-main form input {
   font-size: 16px;
   width: 100%;
   margin: 30px 0;
-  background: rgba(0, 0, 0, 0);
+  background: transparent;
   border: none;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #383838;
 }
 
-.contactMain button {
+.contact-main button {
   font-size: 16px;
   color: white;
   padding: 20px 32px;
@@ -341,12 +350,12 @@ p{
 
 .description {
   width: 95%;
-  background: #fff;
+  background: rgb(193, 231, 215);
   overflow-wrap: break-word;
   text-align: left;
 }
 
-.about_team{
+.about-team{
   max-width: 95%;
   display: flex;
   flex-direction: row;
@@ -354,19 +363,19 @@ p{
   vertical-align: baseline;
   justify-content: center;
 }
-.about_team p{
+.about-team p{
   margin: 0px;
   margin-top: 10px;
 }
 
 .divider{
-  border-bottom: 1px solid #3b4355;
+  border-bottom: 1px solid #2b2f36;
   margin-top: 1.6rem;
   margin-bottom: 1.6rem;
   width: 26px;
 }
 
-.team_member {
+.team-member {
   max-width: 300px;
   background-color: transparent;
   padding-left: 15px;
@@ -397,7 +406,7 @@ p{
 
 .interests p{
   font-size: 17px;
-  color: #918f8f;
+  color: #5f5f5f;
 }
 
 @media screen and (max-width: 768px) {
@@ -405,14 +414,15 @@ p{
     overflow-x: hidden;
   }
 
-  .innerTopBar {
+  .inner-topbar {
     z-index: 100;
   }
 
-  .logoContainer {
+  .logo-container {
     display: flex;
     justify-content: center;
   }
+  
   .nav {
     position: absolute;
     right: 0px;
