@@ -3,7 +3,6 @@ The HomeCheck web application is designed to help Prince George's County buyers 
 
 ## HomeCheck Website Link
 Head to the HomeCheck website through this link: http://home-check-app.herokuapp.com/
-> If prompted by browser, please allow the website to access your location information.
 
 ## Home Page
 The Home Page is where users will be able to search up housing properties which will be visually displayed on a map with indicators. This page is where the main function of the app will be accessed. 
