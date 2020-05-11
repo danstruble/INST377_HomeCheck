@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Burger from './Burger';
 
 const Nav = (props) => (
-  <div className='navContain'>
+  <div className='nav-contain'>
     <ul className='nav'>
       <Link href="/">
         <a><li>Home</li></a>

@@ -3,12 +3,12 @@ import React from "react";
 const ContactForm = () => (
   <div className="container">
     <div className="wrapper">
-      <div class="section_one">
+      <div class="section-one">
         <h1>Don't be a stranger</h1>
-        <h1>just reach out.</h1>
+        <h2>just reach out.</h2>
       </div>
-      <div className="contact_wrapper">
-        <div className="section_two">
+      <div className="contact-wrapper">
+        <div className="section-two">
           <p>
             Feel free to get in touch with us with any questions or inquiries.
             We are always open to discussing new projects, creative ideas or
@@ -18,8 +18,8 @@ const ContactForm = () => (
           <h6>INST377homeCheck@gmail.com</h6>
             
         </div>
-        <div className="section_three">
-          <article className="contactMain">
+        <div className="section-three">
+          <article className="contact-main">
             <form>
               <ul>
                 <li>

@@ -27,8 +27,8 @@ const AboutContent = () => (
         </p>
       </div>
       <h1>Meet the Team</h1>
-      <div className="about_team">
-        <div className="team_member">
+      <div className="about-team">
+        <div className="team-member">
           <div className="img">
             <img src="../static/images/img1.jpeg" alt="img1"></img>
           </div>
@@ -49,7 +49,7 @@ const AboutContent = () => (
             </div>
           </div>
         </div>
-        <div className="team_member">
+        <div className="team-member">
           <div className="img">
             <img src="../static/images/img2.jpg" alt="img2"></img>
           </div>
@@ -69,7 +69,7 @@ const AboutContent = () => (
             </div>
           </div>
         </div>
-        <div className="team_member">
+        <div className="team-member">
           <div className="img">
             <img src="../static/images/img3.png" alt="img3"></img>
           </div>
@@ -89,7 +89,7 @@ const AboutContent = () => (
             </div>
           </div>
         </div>
-        <div className="team_member">
+        <div className="team-member">
           <div className="img">
             <img src="../static/images/img4.jpg" alt="img4"></img>
           </div>
@@ -106,7 +106,7 @@ const AboutContent = () => (
             </div>
           </div>
         </div>
-        <div className="team_member">
+        <div className="team-member">
           <div className="img">
             <img src="../static/images/img5.jpg" alt="img5"></img>
           </div>
