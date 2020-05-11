@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Header from './Header';
 import Nav from './Nav';
-import SideDrawer from './SideDrawer';
-import Burger from './Burger';
+
 
 
 class Layout extends React.Component {
@@ -10,24 +9,10 @@ class Layout extends React.Component {
   constructor(props) {
 
     super(props);
-    this.state = {
-      sideDrawerOpen: false
-    };
-    this.drawerToggleClickHandler = this.drawerToggleClickHandler.bind(this);
-
-
-  }
-
-
-  drawerToggleClickHandler = () => {
-
-    this.setState({
-      sideDrawerOpen: !this.state.sideDrawerOpen
-    });
 
   };
 
-  renderSideBar = () => (this.state.sideDrawerOpen ? <SideDrawer /> : null)
+
 
 
   render() {
@@ -40,8 +25,7 @@ class Layout extends React.Component {
             <div className="logo-container">
               <h1>Home<span>CHECK</span></h1>
             </div>
-            <Nav drawerToggleClickHandler={this.drawerToggleClickHandler} />
-            {this.renderSideBar()}
+            <Nav />
           </div>
 
         </div>
