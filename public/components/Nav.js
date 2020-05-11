@@ -1,7 +1,6 @@
-import React from 'react';
-import Link from 'next/link';
-
-import HamburgerMenu from 'react-hamburger-menu'
+import React from "react";
+import Link from "next/link";
+import HamburgerMenu from "react-hamburger-menu";
 
 export default class Nav extends React.Component {
   constructor() {
@@ -12,37 +11,40 @@ export default class Nav extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-
   handleClick() {
     this.setState({
       open: !this.state.open
-    })
-    const nav = document.querySelector('.nav')
-    nav.classList.toggle('nav-activate')
+    });
+    const nav = document.querySelector(".nav-links");
+    nav.classList.toggle("nav-active");
   }
-
 
   render() {
     return (
-      <div className='nav-contain' >
-        <ul className='nav'>
-          <Link href="/">
-            <a><li>Home</li></a>
-          </Link>
-          <Link href="/about">
-            <a><li>About</li></a>
-          </Link>
-          <Link href="/documentation">
-            <a><li>Documentation</li></a>
-          </Link>
-          <Link href="/contact">
-            <a><li>Contact Us</li></a>
-          </Link>
+      <nav>
+        <div className="logo">
+          <h1>
+            Home<span>CHECK</span>
+          </h1>
+        </div>
+        <ul className="nav-links">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/about">About</a>
+          </li>
+          <li>
+            <a href="/documentation">Documentation</a>
+          </li>
+          <li>
+            <a href="/contact">Contact Us</a>
+          </li>
         </ul>
         <HamburgerMenu
           isOpen={this.state.open}
           menuClicked={this.handleClick}
-          width={18}
+          width={25}
           height={15}
           strokeWidth={2}
           rotate={0}
@@ -50,7 +52,7 @@ export default class Nav extends React.Component {
           borderRadius={0}
           animationDuration={0.5}
         />
-      </div>
-    )
+      </nav>
+    );
   }
 }

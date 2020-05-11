@@ -3,7 +3,7 @@ import React from "react";
 const AboutContent = () => (
   <div className="container">
     <div className="wrapper">
-      <h1>We are HomeCheck</h1>
+      <h1>We are Home<span>CHECK</span></h1>
       <div className="description">
         <p>
           Building code violations are problematic to prospective buyers and
@@ -28,27 +28,6 @@ const AboutContent = () => (
       </div>
       <h1>Meet the Team</h1>
       <div className="about-team">
-        <div className="team-member">
-          <div className="img">
-            <img src="../static/images/img1.jpeg" alt="img1"></img>
-          </div>
-          <div className="person">
-            <div className="name">
-              <b>Jonathan Chen</b>
-            </div>
-            <div className="role">
-              <p>Front-end Developer & Documentation Writer</p>
-            </div>
-            <div class="divider"></div>
-            <div className="interests">
-              <p>
-                My interests include playing basketball, listening to music and
-                playing the piano. I also enjoy learning about data science
-                techniques.
-              </p>
-            </div>
-          </div>
-        </div>
         <div className="team-member">
           <div className="img">
             <img src="../static/images/img2.jpg" alt="img2"></img>
@@ -91,23 +70,6 @@ const AboutContent = () => (
         </div>
         <div className="team-member">
           <div className="img">
-            <img src="../static/images/img4.jpg" alt="img4"></img>
-          </div>
-          <div className="person">
-            <div className="name">
-              <b>Dalton Stoner</b>
-            </div>
-            <div className="role">
-              <p>Front-end Developer & Presentation Writer</p>
-            </div>
-            <div class="divider"></div>
-            <div className="interests">
-              <p>I am interested in long walks on the beach, and cooking.</p>
-            </div>
-          </div>
-        </div>
-        <div className="team-member">
-          <div className="img">
             <img src="../static/images/img5.jpg" alt="img5"></img>
           </div>
           <div className="person">
@@ -120,6 +82,44 @@ const AboutContent = () => (
             <div class="divider"></div>
             <div className="interests">
               <p>My interests are in networking and visualization.</p>
+            </div>
+          </div>
+        </div>
+        <div className="team-member">
+          <div className="img">
+            <img src="../static/images/img1.jpeg" alt="img1"></img>
+          </div>
+          <div className="person">
+            <div className="name">
+              <b>Jonathan Chen</b>
+            </div>
+            <div className="role">
+              <p>Front-end Developer & Documentation Writer</p>
+            </div>
+            <div class="divider"></div>
+            <div className="interests">
+              <p>
+                My interests include playing basketball, listening to music and
+                playing the piano. I also enjoy learning about data science
+                techniques.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="team-member">
+          <div className="img">
+            <img src="../static/images/img4.jpg" alt="img4"></img>
+          </div>
+          <div className="person">
+            <div className="name">
+              <b>Dalton Stoner</b>
+            </div>
+            <div className="role">
+              <p>Front-end Developer & Presentation Writer</p>
+            </div>
+            <div class="divider"></div>
+            <div className="interests">
+              <p>I am interested in long walks on the beach, and cooking.</p>
             </div>
           </div>
         </div>
