@@ -40,8 +40,14 @@ Contains user manual and final report.
 >### /public
 Front-end folder that contains images, html, css, and js files.
 
+>### /node_modules
+Contains installed packages.
+
+>### .env
+Contains the API key.
+
 >### .eslintrc.json
-Contain rules that the js files follows.
+Containsrules that the js files follows.
 
 >### .gitignore
 Contains files to ignore from commits and pushes from local repositories.
@@ -52,11 +58,11 @@ License and copyright notice.
 >### README.md
 Introduces and explains our project.
 
->### package-lock.json	
-Records specific dependencies' version number that our application needs
-
 >### package.json	
 Contains project descriptions, properties, scripts, dependencies, license information, and more.
+
+>### package-lock.json	
+Records specific dependencies' version number that our application needs
 
 >### server.js	
 Contains the code that is needed to start the Node.js server for the application.
