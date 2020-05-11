@@ -14,10 +14,10 @@ body {
 h1,
 h2,
 h3 {
-  line-height: 1.0;
+  line-height: 1;
 }
 
-p{
+p {
   margin-left: 15px;
   margin-right: 15px;
 }
@@ -30,13 +30,12 @@ p{
 }
 
 .wrapper {
-  display:flex;
+  display: flex;
   min-height: 100%;
   width: 960px;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   background: #fefefe;
   margin: 25px;
   text-align: center;
@@ -146,14 +145,11 @@ p{
 }
 
 .search-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background: #383838;
   height: 40px;
   border-radius: 40px;
   padding: 10px;
+  margin-bottom: 20px;
 }
 
 .search-box:hover > .search-btn {
@@ -189,7 +185,8 @@ p{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 5px;
+  margin-bottom: 50px;
+  margin-top: 15px;
 }
 
 .leaflet-container {
@@ -221,20 +218,18 @@ p{
   align-items: flex-start;
   width: 88%;
   text-align: left;
-
 }
 
-.section_one h1{
+.section_one h1 {
   line-height: 0.5;
   word-spacing: 2px;
-
 }
 
 .contact_wrapper {
   margin-top: 20px;
-  display:flex;
+  display: flex;
   flex-direction: row;
-  width:88%;
+  width: 88%;
   flex-wrap: wrap;
   flex-direction: row;
 }
@@ -245,20 +240,20 @@ p{
   text-align: left;
 }
 
-.section_two p{
+.section_two p {
   margin: 0;
   font-size: 15px;
   color: #918f8f;
 }
 
-.section_two h5{
+.section_two h5 {
   margin-top: 70px;
   font-size: 13px;
   font-weight: 500;
   color: #918f8f;
 }
 
-.section_two h6{
+.section_two h6 {
   margin-top: -30px;
   font-size: 14px;
   font-weight: 700;
@@ -312,7 +307,6 @@ p{
   border-radius: 4px;
 }
 
-
 .button {
   background-color: #ffc477;
   -moz-border-radius: 11px;
@@ -346,7 +340,7 @@ p{
   text-align: left;
 }
 
-.about_team{
+.about_team {
   max-width: 95%;
   display: flex;
   flex-direction: row;
@@ -354,12 +348,12 @@ p{
   vertical-align: baseline;
   justify-content: center;
 }
-.about_team p{
+.about_team p {
   margin: 0px;
   margin-top: 10px;
 }
 
-.divider{
+.divider {
   border-bottom: 1px solid #3b4355;
   margin-top: 1.6rem;
   margin-bottom: 1.6rem;
@@ -386,16 +380,16 @@ p{
   margin-bottom: 25px;
 }
 
-.name b{
+.name b {
   font-size: 20px;
 }
 
-.role p{
+.role p {
   margin-top: 3px;
   font-size: 17px;
 }
 
-.interests p{
+.interests p {
   font-size: 17px;
   color: #918f8f;
 }
