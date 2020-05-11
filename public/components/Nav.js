@@ -16,7 +16,16 @@ export default class Nav extends React.Component {
       open: !this.state.open
     });
     const nav = document.querySelector(".nav-links");
+    const navLinks = document.querySelectorAll('.nav-links li')
     nav.classList.toggle("nav-active");
+
+    navLinks.forEach((link, index) => {
+      if (link.style.animation) {
+        link.style.animation = ''
+      } else {
+        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
+      }
+    })
   }
 
   render() {
@@ -41,17 +50,19 @@ export default class Nav extends React.Component {
             <a href="/contact">Contact Us</a>
           </li>
         </ul>
-        <HamburgerMenu
-          isOpen={this.state.open}
-          menuClicked={this.handleClick}
-          width={25}
-          height={15}
-          strokeWidth={2}
-          rotate={0}
-          color="white"
-          borderRadius={0}
-          animationDuration={0.5}
-        />
+        <div className="burger">
+          <HamburgerMenu
+            isOpen={this.state.open}
+            menuClicked={this.handleClick}
+            width={25}
+            height={15}
+            strokeWidth={2}
+            rotate={0}
+            color="white"
+            borderRadius={0}
+            animationDuration={0.5}
+          />
+        </div>
       </nav>
     );
   }
