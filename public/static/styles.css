@@ -440,10 +440,11 @@ p {
     opacity: 0;
   }
 
-  .burger-toggle {
-    display: block;
-    flex: none;
-    margin: 10px;
-    cursor: pointer;
+  .leaflet-container {
+    width: 300px;
   }
+}
+
+.nav.nav-active {
+  transform: translateX(0%);
 }

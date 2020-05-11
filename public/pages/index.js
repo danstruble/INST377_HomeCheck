@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import Search from '../components/Search';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet-universal';
 import Typewriter from 'typewriter-effect';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
