@@ -3,7 +3,7 @@ import React from "react";
 const DocumentationContent = () => (
   <div className="container">
     <div className="wrapper">
-      <h1>How to Use Our Application</h1>
+      <h1>How to Use Home<span className="green-highlight">CHECK</span></h1>
       <div className = "description">      
       </div>
       <h1>Want to Learn More Information?</h1>

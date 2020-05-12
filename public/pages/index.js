@@ -26,7 +26,7 @@ export default class IndexPage extends React.Component {
     this.handleZoom();
   }
 
-  postSearch() {
+  putSearch() {
     const value = this.state.value;
 
     return fetch('/api/search', {
@@ -63,7 +63,7 @@ export default class IndexPage extends React.Component {
 
   handleSearch() {
     this.setState({ value: document.querySelector('.search-txt').value }, async () => {
-      this.postSearch().then(() => {
+      this.putSearch().then(() => {
         this.getSearch();
       });
     });
@@ -150,3 +150,4 @@ export default class IndexPage extends React.Component {
     );
   }
 }
+
