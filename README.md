@@ -93,6 +93,6 @@ We tested the API endpoints of the server using [Postman](https://www.postman.co
 
 1. Add a response object that indicates if the search was sucessful or not.
 2. Add a loader when searching for the address to help users that it's working. 
-3. Create local or online database tha can store POST information.
+3. Create local or online database tha can store all the data. 
 5. Incorporate more data from other counties, then expanding to other states.
 4. Implement interface for discussion that can help connect buyers and renters with the updates that a home may have.
