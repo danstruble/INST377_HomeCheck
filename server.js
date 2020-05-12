@@ -10,6 +10,7 @@ const cryptoRandomString = require('crypto-random-string');
 const dev = process.env.NODE_ENV !== 'production';
 const server = next({ dev, dir: './public' });
 const handle = server.getRequestHandler();
+const sqlite3 = require('sqlite3').verbose();
 require('dotenv').config();
 
 server
@@ -24,6 +25,21 @@ server
     // Here, if our server has a PORT defined in its environment, it will use that.
     // Otherwise, it will default to port 3000
     const port = process.env.PORT || 3000;
+
+    // Add in a SQLite server in memory, if actually deployed, an external database would be hosted, as this data will be periodically lost
+    const db = new sqlite3.Database(':memory:', (err) => {
+      if(err){
+        return console.error('err.message');
+      }
+      console.log('Connected to the in-memory SQL database');
+    });
+
+    // This creates a form schema to be used
+    db.run("CREATE TABLE contact_forms (contact_form_id INTEGER PRIMARY KEY,name TEXT,email TEXT,message TEXT);",(err) => {
+      if(err) {
+        return console.log(err.message); 
+      }
+    });
 
     // Our server needs certain features - like the ability to send and read JSON
     app.use(express.urlencoded({ extended: true }))
@@ -130,7 +146,16 @@ server
 
     app.post('/api/form/submit', (req, res) => {
       req.session.form = req.body;
-      res.end('Form has been successfully submitted!');
+      console.log(req.session.form);
+      db.run("INSERT INTO contact_forms(name, email, message) VALUES(?,?,?);", [req.session.form.name,req.session.form.email,req.session.form.message], (err) => {
+        if(err) {
+          return console.log(err.message); 
+        }
+        db.all("SELECT * FROM contact_forms;", (err, rows) => {
+          console.log(rows); // just shows that it is being stored
+        });
+        res.end('Form has been successfully submitted!');
+      });
     })
 
     app.get('/api/search/results', async (req, res) => {
