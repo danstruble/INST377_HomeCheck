@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout";
-import { Map, Marker, Popup, TileLayer } from "react-leaflet-universal";
+import { Map, Marker, Popup, TileLayer, FeatureGroup } from "react-leaflet-universal";
 import Typewriter from "typewriter-effect";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -9,40 +9,90 @@ export default class IndexPage extends React.Component {
   constructor() {
     super();
     this.state = {
+      searchRendered: false,
+      value: "",
       violations: [],
+      geoCoords: {}
     };
+
+    this.handleSearch = this.handleSearch.bind(this);
+    this.handleZoom = this.handleZoom.bind(this);
+
+    this.mapRef = React.createRef();
+    this.groupRef = React.createRef();
   }
 
-  componentDidMount() {
-    this.getData();
+  componentDidUpdate() {
+    this.handleZoom();
   }
 
-  getData() {
-    fetch("/api")
-      .then((data) => data.json())
-      .then((data) => {
-        this.setState({
-          violations: data.data
-        });
+  postSearch() {
+    const value = this.state.value;
+
+    return fetch('/api/search', {
+      method: 'PUT',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ search: value })
+    }).then(res => res);
+  }
+
+  getSearch() {
+    if (this.state.value !== "") {
+      fetch('/api/search/results', {
+        method: 'GET',
+        credentials: 'same-origin',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then((res) => res.json())
+        .then((res) => this.setState({ violations: res.location, searchRendered: true, geoCoords: res.geoCoords }))
+    }
+  }
+
+  async handleZoom() {
+    if (this.state.searchRendered) {
+      const map = await this.mapRef.current.leafletElement;
+      const group = await this.groupRef.current.leafletElement;
+      map.fitBounds(group.getBounds());
+    }
+  }
+
+  handleSearch() {
+    this.setState({ value: document.querySelector('.search-txt').value }, async () => {
+      this.postSearch().then(() => {
+        this.getSearch();
       });
+    });
   }
 
   renderLeaflet() {
-    const violations = this.state.violations;
-    console.log(violations);
     return (
-      <Map center={[38.7849, -76.8721]} zoom={9.5}>
+      <Map center={[38.7849, -76.8721]} zoom={9.5} ref={this.mapRef}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
-        {violations.map((violations, idx) => (
+        {this.renderSearch()}
+      </Map>
+    );
+  }
+
+  renderSearch() {
+    if (this.state.searchRendered) {
+      const violations = this.state.violations;
+      const geoCoords = this.state.geoCoords;
+
+      return (
+        <FeatureGroup ref={this.groupRef}>
           <Marker
             position={[
-              parseFloat(violations.latLng.lat),
-              parseFloat(violations.latLng.lng),
+              parseFloat(geoCoords.lat),
+              parseFloat(geoCoords.lng)
             ]}
-            key={idx}
           >
             <Popup>
               {violations.address.street_number}{" "}
@@ -65,24 +115,24 @@ export default class IndexPage extends React.Component {
               {violations.count}
             </Popup>
           </Marker>
-        ))}
-      </Map>
-    );
+        </FeatureGroup>
+      )
+    }
   }
+
   render() {
     return (
       <Layout>
         <div className="container">
           <div className="wrapper">
-            {/*<Typewriter
-            options={{
-              strings: ['Type in address', 'or street name', 'or zip code', 'or just watch me type!'],
-              autoStart: true,
-              loop: true
-            }}
-            />
-            */}
             <div className="map">{this.renderLeaflet()}</div>
+            <Typewriter
+              options={{
+                strings: ['Type in address, street name, and street suffix', 'then press the button!'],
+                autoStart: true,
+                loop: true
+              }}
+            />
             <div className="search-box">
               <input
                 className="search-txt"
@@ -90,7 +140,7 @@ export default class IndexPage extends React.Component {
                 name=""
                 placeholder="Type to search"
               />
-              <a className="search-btn" href="#">
+              <a className="search-btn" href="#" onClick={this.handleSearch}>
                 <FontAwesomeIcon icon={faSearch} />
               </a>
             </div>

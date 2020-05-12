@@ -359,6 +359,21 @@ nav {
   color: #5f5f5f;
 }
 
+.form-btn {
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.form-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.form-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
 @media screen and (max-width: 1232px) {
   .section-one {
     display: flex;

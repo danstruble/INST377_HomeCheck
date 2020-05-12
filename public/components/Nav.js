@@ -38,16 +38,16 @@ export default class Nav extends React.Component {
         </div>
         <ul className="nav-links">
           <li>
-            <a href="/">Home</a>
+            <Link href="/"><a>Home</a></Link>
           </li>
           <li>
-            <a href="/about">About</a>
+            <Link href="/about"><a>About</a></Link>
           </li>
           <li>
-            <a href="/documentation">Documentation</a>
+            <Link href="/documentation"><a>Documentation</a></Link>
           </li>
           <li>
-            <a href="/contact">Contact Us</a>
+            <Link href="/contact"><a>Contact Us</a></Link>
           </li>
         </ul>
         <div className="burger">

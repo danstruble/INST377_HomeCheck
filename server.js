@@ -1,8 +1,12 @@
 // These are our required libraries to make the server work.
 // We're including a server-side version of Fetch to build on your client-side work
 const express = require('express');
+const session = require('express-session');
 const fetch = require('node-fetch');
 const next = require('next');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const cryptoRandomString = require('crypto-random-string');
 const dev = process.env.NODE_ENV !== 'production';
 const server = next({ dev, dir: './public' });
 const handle = server.getRequestHandler();
@@ -14,6 +18,7 @@ server
     // Here we instantiate the server we're going to turn on
     const app = express();
 
+    const session_secret = cryptoRandomString({ length: 10, type: 'base64' });
 
     // Servers are often subject to the whims of their environment.
     // Here, if our server has a PORT defined in its environment, it will use that.
@@ -21,13 +26,17 @@ server
     const port = process.env.PORT || 3000;
 
     // Our server needs certain features - like the ability to send and read JSON
-    app.use(express.urlencoded({ extended: true }));
-    app.use(express.json());
+    app.use(express.urlencoded({ extended: true }))
+      .use(cors())
+      .use(bodyParser.json())
+      .use(session({
+        secret: session_secret,
+        resave: false,
+        saveUninitialized: true,
+        cookie: { secure: process.NODE_ENV !== 'production' ? false : true },
+      }))
 
-    // And the ability to serve some files publicly, like our HTML.
-    app.use(express.static('public/build'));
-
-    async function getCoords(location) {
+    const getCoords = async (location) => {
       let apiKey = process.env.API_KEY;
       let boundingBox = "&boundingBox=39.112823,-77.164707,38.581269,-76.496682"
       let locationURL = "http://www.mapquestapi.com/geocoding/v1/address?key=" + apiKey + "&location=" + location.address.street_number + "+" + location.address.street_name + "+" + location.address.street_suffix + "," + location.address.city + "," + location.address.state + "," + location.address.zip + boundingBox;
@@ -44,29 +53,22 @@ server
       return coords;
     }
 
-    function getRandomKey(collection) {
-      let keys = Object.keys(collection);
-      return keys[Math.floor(Math.random() * keys.length)];
-    }
-
-    function randomLocations(addresses,list){
-      let randomKey = getRandomKey(addresses);
-      list.push(addresses[randomKey]);
-
-      if(list.length < 10){
-        randomLocations(addresses,list);
+    function randomLocations(addresses, list) {
+      let keys = Object.keys(addresses);
+      for (key of keys) {
+        list.push(addresses[key]);
       }
       return list;
     }
 
-    function processDataForFrontEnd(req, res) {
+    async function processDataForFrontEnd() {
       const baseURL = 'https://data.princegeorgescountymd.gov/resource/9hyf-46qb.json'; // Enter the URL for the data you would like to retrieve here
 
       let addressDict = {};
       // Your Fetch API call starts here
       // Note that at no point do you "return" anything from this function -
       // it instead handles returning data to your front end at line 34.
-      fetch(baseURL)
+      const data = await fetch(baseURL)
         .then((response) => response.json())
         .then((parsedResponse) => {
           // this then statement structures data taken from the database, which allows us to streamline the next calls
@@ -94,7 +96,7 @@ server
         })
         .then(async (addressDict) => {
           //randomly generates coordinates
-          locationArray = await randomLocations(addressDict,[]);
+          locationArray = await randomLocations(addressDict, []);
           return locationArray;
         })
         .then(async (locationArray) => {
@@ -104,18 +106,57 @@ server
             singleLoc['address'] = location.address;
             singleLoc['count'] = location.count;
             singleLoc['violations'] = location.violations;
-            singleLoc['latLng'] = await getCoords(location);
             geo.push(singleLoc);
           };
+
           return geo;
         })
-        .then((geo) => res.json({ data: geo }));
+        .then((geo) => geo);
+
+
+      return data;
     }
 
     // This is our first route on our server.
     // To access it, we can use a "GET" request on the front end
     // by typing in: localhost:3000/api or 127.0.0.1:3000/api
-    app.get('/api', (req, res) => { processDataForFrontEnd(req, res); });
+    app.put('/api/search', async (req, res) => {
+      if (!req.session.violations) {
+        req.session.violations = await processDataForFrontEnd();
+      }
+      req.session.search = req.body.search;
+      res.end('200');
+    })
+
+    app.post('/api/form/submit', (req, res) => {
+      req.session.form = req.body;
+      res.end('Form has been successfully submitted!');
+    })
+    app.get('/api/search/results', async (req, res) => {
+      const violations = req.session.violations;
+      const search = req.session.search;
+
+      let [first, ...second] = search.split(" ");
+      let third = second.pop();
+      second = second.join(" ");
+
+      const location = violations.find((violation) => {
+        const street_number = violation.address.street_number.toString();
+        const street_name = violation.address.street_name.toLowerCase();
+        const street_suffix = violation.address.street_suffix.toLowerCase();
+
+        if (street_number === first &&
+          street_name === second.toLowerCase() &&
+          street_suffix === third.toLowerCase()) {
+          return violation;
+        }
+      });
+
+      let geoCoords = await getCoords(location)
+
+      res.send({ geoCoords, location });
+    })
+
     app.get('*', (req, res) => {
       return handle(req, res);
     });
