@@ -33,6 +33,11 @@ Then, you would also need to install dependencies. In the file of package.json, 
 npm install –save {dependency}
 ```
 
+You can also run this following command to install all dependencies.
+```
+npm i
+````
+
 ### Project Structure
 >### /docs 
 Contains user manual and final report.
