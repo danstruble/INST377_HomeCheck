@@ -1,6 +1,12 @@
 import React from "react";
 import Layout from "../components/Layout";
-import { Map, Marker, Popup, TileLayer, FeatureGroup } from "react-leaflet-universal";
+import {
+  Map,
+  Marker,
+  Popup,
+  TileLayer,
+  FeatureGroup,
+} from "react-leaflet-universal";
 import Typewriter from "typewriter-effect";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
@@ -12,7 +18,7 @@ export default class IndexPage extends React.Component {
       searchRendered: false,
       value: "",
       violations: [],
-      geoCoords: {}
+      geoCoords: {},
     };
 
     this.handleSearch = this.handleSearch.bind(this);
@@ -29,27 +35,33 @@ export default class IndexPage extends React.Component {
   putSearch() {
     const value = this.state.value;
 
-    return fetch('/api/search', {
-      method: 'PUT',
-      credentials: 'same-origin',
+    return fetch("/api/search", {
+      method: "PUT",
+      credentials: "same-origin",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ search: value })
-    }).then(res => res);
+      body: JSON.stringify({ search: value }),
+    }).then((res) => res);
   }
 
   getSearch() {
     if (this.state.value !== "") {
-      fetch('/api/search/results', {
-        method: 'GET',
-        credentials: 'same-origin',
+      fetch("/api/search/results", {
+        method: "GET",
+        credentials: "same-origin",
         headers: {
-          'Content-Type': 'application/json'
-        }
+          "Content-Type": "application/json",
+        },
       })
         .then((res) => res.json())
-        .then((res) => this.setState({ violations: res.location, searchRendered: true, geoCoords: res.geoCoords }))
+        .then((res) =>
+          this.setState({
+            violations: res.location,
+            searchRendered: true,
+            geoCoords: res.geoCoords,
+          })
+        );
     }
   }
 
@@ -62,11 +74,14 @@ export default class IndexPage extends React.Component {
   }
 
   handleSearch() {
-    this.setState({ value: document.querySelector('.search-txt').value }, async () => {
-      this.putSearch().then(() => {
-        this.getSearch();
-      });
-    });
+    this.setState(
+      { value: document.querySelector(".search-txt").value },
+      async () => {
+        this.putSearch().then(() => {
+          this.getSearch();
+        });
+      }
+    );
   }
 
   renderLeaflet() {
@@ -89,10 +104,7 @@ export default class IndexPage extends React.Component {
       return (
         <FeatureGroup ref={this.groupRef}>
           <Marker
-            position={[
-              parseFloat(geoCoords.lat),
-              parseFloat(geoCoords.lng)
-            ]}
+            position={[parseFloat(geoCoords.lat), parseFloat(geoCoords.lng)]}
           >
             <Popup>
               {violations.address.street_number}{" "}
@@ -116,7 +128,7 @@ export default class IndexPage extends React.Component {
             </Popup>
           </Marker>
         </FeatureGroup>
-      )
+      );
     }
   }
 
@@ -125,29 +137,54 @@ export default class IndexPage extends React.Component {
       <Layout>
         <div className="container">
           <div className="wrapper">
-            <div className="map">{this.renderLeaflet()}</div>
-            <Typewriter
-              options={{
-                strings: ['Type in address, street name, and street suffix', 'then press the button!'],
-                autoStart: true,
-                loop: true
-              }}
-            />
+            <div className="slogan">
+              <h1>Don't Be a Fool, </h1>
+              <h1>
+                Check Before You &nbsp;
+                <div className="green-highlight">
+                  <Typewriter
+                    options={{
+                      strings: ["Buy", "Rent"],
+                      autoStart: true,
+                      loop: true,
+                    }}
+                  />
+                </div>
+              </h1>
+            </div>
+            <div className="search-inst">
+              <Typewriter
+                options={{
+                  strings: [
+                    "Type in address, street name, and street suffix",
+                    "then press the button!",
+                  ],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+            </div>
+
             <div className="search-box">
               <input
                 className="search-txt"
                 type="text"
                 name=""
                 placeholder="Type to search"
+                onKeyPress={(event) => {
+                  if (event.key === "Enter") {
+                    this.handleSearch();
+                  }
+                }}
               />
               <a className="search-btn" href="#" onClick={this.handleSearch}>
                 <FontAwesomeIcon icon={faSearch} />
               </a>
             </div>
+            <div className="map">{this.renderLeaflet()}</div>
           </div>
         </div>
       </Layout>
     );
   }
 }
-

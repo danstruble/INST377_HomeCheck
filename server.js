@@ -132,7 +132,9 @@ server
       req.session.form = req.body;
       res.end('Form has been successfully submitted!');
     })
+
     app.get('/api/search/results', async (req, res) => {
+
       const violations = req.session.violations;
       const search = req.session.search;
 

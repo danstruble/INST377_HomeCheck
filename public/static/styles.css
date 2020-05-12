@@ -35,12 +35,36 @@ p {
   text-align: center;
 }
 
+.slogan {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.slogan h1{
+  letter-spacing: 1px;
+}
+
+.green {
+  color: rgb(26, 182, 125);
+  display: inline;
+  margin-left:-8px;
+}
+.green-highlight {
+  color: rgb(26, 182, 125);
+  display: inline;
+}
+
+.Typewriter {
+  display: inline;
+}
+
 .logo {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 
 .logo h1 {
   color: #ffffff;
@@ -88,24 +112,28 @@ nav {
   display: none;
 }
 
+
 .search-box {
   background: #383838;
-  height: 40px;
-  border-radius: 40px;
+  height: 20px;
+  border-radius: 5px;
   padding: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  width:420px;
 }
 
 .search-box:hover > .search-btn {
-  background: white;
+  background: rgb(171, 211, 223);
+
 }
 
 .search-btn {
-  color: orange;
-  float: right;
+  margin-top: -10px;
+  margin-right: -10px;
+  float:right;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,16 +141,16 @@ nav {
 }
 
 .search-txt {
+  float:left;
+  display:flex;
   border: none;
   background: none;
   outline: none;
-  float: left;
   padding: 0;
   color: white;
   font-size: 16px;
   transition: 0.4s;
-  line-height: 40px;
-  width: 240px;
+  width: 375px;
 }
 
 .map {
@@ -130,11 +158,12 @@ nav {
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
-  margin-top: 15px;
+  margin-top: 10px;
+  width:100%;
 }
 
 .leaflet-container {
-  width: 800px;
+  width: 100%;
   height: 400px;
 }
 
@@ -181,14 +210,10 @@ nav {
   font-size: 36px;
 }
 
-.green-highlight {
-  color: rgb(26, 182, 125);
-}
 
 .contact-wrapper {
   margin-top: 20px;
   display: flex;
-  flex-direction: row;
   width: 100%;
   flex-wrap: wrap;
   flex-direction: row;
@@ -416,13 +441,18 @@ nav {
 @media screen and (max-width: 1024px) {
   .nav-links {
     width: 50%;
-    z-index: 1000;
+    z-index: 10000;
   }
 }
 
 @media screen and (max-width: 768px) {
+
   body {
     overflow-x: hidden;
+    
+  }
+  .margin{
+    min-width: 380px;
   }
   .nav-links {
     position: absolute;
@@ -445,13 +475,35 @@ nav {
   .burger {
     display: block;
   }
-
-  .leaflet-container {
-    width: 300px;
+  .map{
+    width: 100%;
   }
+  .leaflet-container {
+    width: 100%;
+  }
+  .slogan {
+    width: 100%;
+
 }
 
 @media screen and (max-width: 520px) {
+  .search-inst{
+    font-size: 14px;
+  } 
+
+  .slogan h1{
+    letter-spacing: 0px;
+  }
+  .search-box {
+    width: 80%;
+  }
+  .search-btn {
+    width: 10%;
+  }
+  .search-txt {
+    width: 80%;
+  }
+
   .description p {
     font-size: 16px;
     width: 100%;
@@ -462,7 +514,7 @@ nav {
   .wrapper {
     margin-left: 0;
     margin-right: 0;
-    min-width: 256px;
+    min-width: 370px;
   }
 
   .wrapper h1{
@@ -499,6 +551,13 @@ nav {
   .interests p {
     font-size: 15px;
   }
+  .map{
+    width: 95%;
+  }
+  .leaflet-container {
+    width: 95%;
+    height: 300px;
+
 }
 
 .nav-active {
