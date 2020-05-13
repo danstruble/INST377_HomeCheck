@@ -119,7 +119,7 @@ This is a GET request. This is called after the /api/search call is performed af
 ```
 /api/form/submit
 ```
-This is a POST endpoint. At the minimum, a request with the body content of a JSON object consisting of a 'name' field, 'email' field, and 'message' field shall be sent. This handles our Contact Us form, which enters what the user has submitted on the form into a local database currently hosted in the application memory. After the form has been successfully submitted, it will return a success message.
+This is a POST endpoint. At the minimum, a request with the body content of a JSON object consisting of a "name" field, "email" field, and "message" field shall be sent. This handles our Contact Us form, which enters what the user has submitted on the form into a local database currently hosted in the application memory. After the form has been successfully submitted, it will return a success message.
 
 ### Known Bugs
 1. The Prince George's County API only provides 1000 rows of data when using their offical [SODA API](https://dev.socrata.com/foundry/data.princegeorgescountymd.gov/9hyf-46qb) and this limitation causes an issue that the map doesn't respond when an address that isn't in the 1000 rows of data is entered.
