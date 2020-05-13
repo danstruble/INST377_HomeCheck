@@ -74,21 +74,13 @@ Contains the code that is needed to start the Node.js server for the application
 
 ### Running the Application on a Server
 
+To run this application locally, you must first have Node.JS installed. If you do not have it, [click here](https://nodejs.org/en/download/). After installing, navigate to the root directory of this project using a command line interface. Issue the command 'npm install' to install all required packages for this application to run. After all packages are installed, issuing the command 'npm start' will start the server locally, hosting it at 'localhost:3000'. 
+
+To run this application on Heroku, you must first create an account with Heroku, and have this Github project forked to your Github account. After registering for Heroku, create a new app, name it appropriately, and then once brought to the deploy tab, click the GitHub icon to connect your GitHub account to your Heroku account. Once your account is linked, enter the name of the GitHub project when completing the App Connected to GitHub section. This should look something like 'danstruble/INST377_HomeCheck'. Once the project is connected, you can turn on automatic deployment of your project on the master branch, or you can opt for manual deployment, which requires you to manually load each subsequent GitHub push to your project afterwards.
 
 ### Testing
 
-## Postman
 We tested the API endpoints of the server using [Postman](https://www.postman.com/) to ensure that our back-end is working correctly. 
-
-## Testing addresses
-While testing for addresses from the databse on our application, we realized that we were only allowed to obtain 1000 rows of sample data from the Prince George's County. The 1000 rows of data can be found at their offical [API endpoint](https://data.princegeorgescountymd.gov/resource/9hyf-46qb.json). Hence, only addressed from the 1000 rows of data will work on the application. 
-
-Some addressed for testing:
-- 11505 Old Baltimore Pike
-- 5341 Southern Ave
-- 5809 Fountain Rd
-- 7310 Leona St
-- 1913 Campbell Dr
 
 ### API
 
