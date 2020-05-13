@@ -13,7 +13,7 @@ The Home Page is where users will be able to search up housing properties which 
 3. Once you have entered, press Enter or click on the light blue button that shows up when you hover over the search bar.
 4. The result will show up on the map, and clicking on the marker will show home inspection violation information.
 
-It should be noted that this application currently only works with Prince George's County homes, and addresses that are not in the Prince George's County House Inspection Violation Database will not show up on the map.
+It should be noted the Prince George's County API only provides 1000 rows of data when using their offical SODA API and this limitation causes an issue that the map doesn't respond when an address that isn't in the 1000 rows of data is entered.
 
 ## Documentation Page
 The Documentation Page provides instructions for the user to understand how our application works. In addition, it includes expected result from the API if requesting with a POST, PUT, or GET and what is needed to get the result. It also includes a link to our developer manual for those developers who are looking to work with the project.
