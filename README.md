@@ -86,8 +86,8 @@ We tested the API endpoints of the server using [Postman](https://www.postman.co
 
 
 ### Known Bugs
-1. The Prince George's County API only provides 1000 rows of data when using SODA API and this limitation causes an issue that the map doesn't respond when an address that isn't in the 1000 rows of data is entered.
-2. Sometimes searching for an address takes longer than usual. 
+1. The Prince George's County API only provides 1000 rows of data when using their offical SODA API and this limitation causes an issue that the map doesn't respond when an address that isn't in the 1000 rows of data is entered.
+2. Sometimes searching for an address may take longer.
 
 ### Future Roadmap
 1. Work with the Prince George's County to either request full access to the database or Create local or online database tha can store all the data. 
