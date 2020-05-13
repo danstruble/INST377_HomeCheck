@@ -75,8 +75,6 @@ Contains the code that is needed to start the Node.js server for the application
 ### Running the Application on a Server
 
 
-
-
 ### Testing
 
 We tested the API endpoints of the server using [Postman](https://www.postman.com/) to ensure that our back-end is working correctly. 
@@ -85,14 +83,12 @@ We tested the API endpoints of the server using [Postman](https://www.postman.co
 
 
 ### Known Bugs
-
-1. The map doesn't respond when an address that isn't in the Prince George's County House Inspection Violation Database is entered. 
+1. The Prince George's County API only provides 1000 rows of data when using SODA API and this limitation causes an issue that the map doesn't respond when an address that isn't in the 1000 rows of data is entered.
 2. Sometimes searching for an address takes longer than usual. 
 
 ### Future Roadmap
-
-1. Add a response object that indicates if the search was sucessful or not.
-2. Add a loader when searching for the address to help users that it's working. 
-3. Create local or online database tha can store all the data. 
-5. Incorporate more data from other counties, then expanding to other states.
-4. Implement interface for discussion that can help connect buyers and renters with the updates that a home may have.
+1. Work with the Prince George's County to either request full access to the database or Create local or online database tha can store all the data. 
+2. Add a response object that indicates if the search was sucessful or not.
+3. Add a loader when searching for the address to help users that it's working. 
+4. Incorporate more data from other counties, then expanding to other states.
+5. Implement interface for discussion that can help connect buyers and renters with the updates that a home may have.
