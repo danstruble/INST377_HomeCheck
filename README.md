@@ -77,7 +77,18 @@ Contains the code that is needed to start the Node.js server for the application
 
 ### Testing
 
+## Postman
 We tested the API endpoints of the server using [Postman](https://www.postman.com/) to ensure that our back-end is working correctly. 
+
+## Testing addresses
+While testing for addresses from the databse on our application, we realized that we were only allowed to obtain 1000 rows of sample data from the Prince George's County. The 1000 rows of data can be found at their offical [API endpoint](https://data.princegeorgescountymd.gov/resource/9hyf-46qb.json). Hence, only addressed from the 1000 rows of data will work on the application. 
+
+Some addressed for testing:
+- 11505 Old Baltimore Pike
+- 5341 Southern Ave
+- 5809 Fountain Rd
+- 7310 Leona St
+- 1913 Campbell Dr
 
 ### API
 
