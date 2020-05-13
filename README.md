@@ -111,7 +111,7 @@ Some addressed for testing:
 2. Sometimes searching for an address may take longer.
 
 ### Future Roadmap
-1. Work with the Prince George's County to either request full access to the database or Create local or online database tha can store all the data. 
+1. Work with the Prince George's County to either request full access to the database, or create local or online database tha can store all the data. 
 2. Add a response object that indicates if the search was sucessful or not.
 3. Add a loader when searching for the address to help users that it's working. 
 4. Incorporate more data from other counties, then expanding to other states.
