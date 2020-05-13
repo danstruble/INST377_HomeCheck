@@ -4,10 +4,10 @@
 ## Link to website: 
 http://home-check-app.herokuapp.com/
 
-## Information problem
+## Information Problem
 Many current buyers and renters have trouble finding housing violations codes or are unaware of these protocols. The specific problem is that it is very confusing and unintuitive to access the housing inspection violation data provided by Prince George's County.
 
-## Stakeholders/target browsers
+## Stakeholders
 Our current stakeholders are prospective buyers and renters in Prince George's county. We would also include county administrators and inspectors. We hope that these people are able to use our app to help them learn about some of the housing violations that a home may have.
 
 ## Data
