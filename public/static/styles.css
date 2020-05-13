@@ -483,6 +483,7 @@ nav {
     transition: transform 0.5s ease-in;
     z-index: 10000;
   }
+  
   .nav-links li {
     opacity: 0;
     margin-left: 50px;
