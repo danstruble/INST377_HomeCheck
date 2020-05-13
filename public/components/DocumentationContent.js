@@ -24,27 +24,18 @@ const DocumentationContent = () => (
           </li>
           <br></br>
           <div className="note">
-            It should be noted that this application currently only works with
-            Prince George's County homes, and addresses that are not in the
-            Prince George's County House Inspection Violation Database will not
-            show up on the map.
+            The Prince George's County API only provides 1000 rows of data when
+            using their offical SODA API and this limitation causes an issue
+            that the map doesn't respond when an address that isn't in the 1000
+            rows of data is entered.
             <br></br>
             Some addressed for testing:
             <ul>
-              <li>
-              11505 Old Baltimore Pike
-              </li>
-              <li>
-              5341 Southern Ave
-              </li>
-              <li>
-              7310 Leona St
-              </li>
-              <li>
-              1913 Campbell Dr
-              </li>
+              <li>11505 Old Baltimore Pike</li>
+              <li>5341 Southern Ave</li>
+              <li>7310 Leona St</li>
+              <li>1913 Campbell Dr</li>
             </ul>
-
           </div>
         </ol>
       </div>
