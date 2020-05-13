@@ -18,11 +18,6 @@ h3 {
   line-height: 1;
 }
 
-p {
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
 .wrapper {
   display: flex;
   min-height: 100%;
@@ -336,10 +331,18 @@ nav {
   margin-bottom: 10px;
 }
 
+.description h2{
+  font-size:25px;
+}
 .note{
   font-size: 0.8rem;
   color: #a17d7d;
 }
+.api_text{
+  color: #a17d7d;
+  margin-top: 30px;
+}
+
 .about-team {
   max-width: 95%;
   display: flex;
@@ -465,6 +468,9 @@ nav {
   .description{
     width:100%;
   }
+  .description h2{
+    font-size: 24px;
+  }
   .margin{
     min-width: 380px;
   }
@@ -483,7 +489,7 @@ nav {
     transition: transform 0.5s ease-in;
     z-index: 10000;
   }
-  
+
   .nav-links li {
     opacity: 0;
     margin-left: 50px;
