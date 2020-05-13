@@ -105,6 +105,19 @@ Some addressed for testing:
 
 ### API
 
+Our application hosts the follow API endpoints
+```
+/api/search
+```
+This is a PUT request. This is called when a user first clicks the search button on the homepage, and sends a JSON object which contains a keypair of 'search', and the value being a string of the search term entered by the user. This will then set the session search criteria, to be used in the results API. This API call also ensures that if the violation data has not been fetched from the PG County Interface, that it retreives it. This specific call is asyncronous, which will prevent search resultss from returning without the dataset being populated on the server. After this call is completed, it will return a 200 code, showing it has successfully completed.
+```
+/api/search/results
+```
+This is a GET request. This is called after the /api/search call is performed after the user has searched for a location. Being a GET request, no data is required to be sent. This will take the session search which was set by the PUT request called previously, and search for a matching address in the violation set. If a match is found, it will return the geocoded coordinates of the location to display on the map, and the information about the location, containing violation data. This will then be displayed on the leaflet map.
+```
+/api/form/submit
+```
+This is a POST endpoint. At the minimum, a request with the body content of a JSON object consisting of a 'name' field, 'email' field, and 'message' field shall be sent. This handles our Contact Us form, which enters what the user has submitted on the form into a local database currently hosted in the application memory. After the form has been successfully submitted, it will return a success message.
 
 ### Known Bugs
 1. The Prince George's County API only provides 1000 rows of data when using their offical [SODA API](https://dev.socrata.com/foundry/data.princegeorgescountymd.gov/9hyf-46qb) and this limitation causes an issue that the map doesn't respond when an address that isn't in the 1000 rows of data is entered.
