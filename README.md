@@ -107,7 +107,7 @@ Some addressed for testing:
 
 
 ### Known Bugs
-1. The Prince George's County API only provides 1000 rows of data when using their offical SODA API and this limitation causes an issue that the map doesn't respond when an address that isn't in the 1000 rows of data is entered.
+1. The Prince George's County API only provides 1000 rows of data when using their offical [SODA API](https://dev.socrata.com/foundry/data.princegeorgescountymd.gov/9hyf-46qb) and this limitation causes an issue that the map doesn't respond when an address that isn't in the 1000 rows of data is entered.
 2. Sometimes searching for an address may take longer.
 
 ### Future Roadmap
