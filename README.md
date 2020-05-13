@@ -18,12 +18,12 @@ While HomeCheck is built to be adaptive on browsers of any computer and mobile O
 ### Installation and Dependencies
 This project is stored in a Github repository, and you may fork it to your own repository and make modifications to it when cloned to your local repository. You may either choose to install GitHub Desktop or Git to clone it to your local repository. For GitHub Desktop installation and documentation, [click here](https://desktop.github.com/). For Git installation, [click here](https://git-scm.com/downloads), and for Git repository instructions, [click here](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository)
 
-Once you have cloned this project from GitHub into your local repository, you would need to install node.js, npm, and Git in order for this project to work. 
+Once you have cloned this project from GitHub into your local repository, you would need to install Node.js, npm, and Git in order for this project to work. 
 
-- To download and install node.js, [click here](https://nodejs.org/en/download/). It should be noted that npm will automatically be installed along with node.js. 
+- To download and install Node.js, [click here](https://nodejs.org/en/download/). It should be noted that npm will automatically be installed along with node.js. 
 - If you haven't installed Git yet, [click here](https://git-scm.com/downloads).
 
-Once you have installed node.js, npm, and Git, open up gitbash console and navigate to your local repository that contains this project. Run the following code to navigate to your local repository. 
+Once you have installed Node.js, npm, and Git, open up gitbash console and navigate to your local repository that contains this project. Run the following code to navigate to your local repository. 
 ```
 cd {project repository path}
 ```
@@ -74,13 +74,26 @@ Contains the code that is needed to start the Node.js server for the application
 
 ### Running the Application on a Server
 
+#### Running Locally
+To run this application locally, you must follow the instructions listed in the Installation and Dependencies. Once you have cloned the project to your local directory, and have NodeJS and all the dependencies installed, navigate to the directory that contains the project and run the following command to start the server locally which will be hosted at `localhost:3000`.
+
+```
+npm start
+```
+
+#### Running on Heroku 
+To run this application on Heroku, you must first create an account with [Heroku](https://www.heroku.com/), and have this Github project forked to your Github account. After registering for Heroku, create a new app, name it appropriately, and then once brought to the deploy tab, click the GitHub icon to connect your GitHub account to your Heroku account. 
+
+Once your account is linked, enter the name of the GitHub project when completing the App Connected to GitHub section. This should look something like "danstruble/INST377_HomeCheck". Once the project is connected, you can turn on automatic deployment of your project on the master branch, or you can opt for manual deployment, which requires you to manually load each subsequent GitHub push to your project afterwards.
+
+After your Github project has been deployed to your Heroku project, you may access the application using the Heroku instance link.
 
 ### Testing
 
-## Postman
+#### Postman
 We tested the API endpoints of the server using [Postman](https://www.postman.com/) to ensure that our back-end is working correctly. 
 
-## Testing addresses
+#### Testing addresses
 While testing for addresses from the databse on our application, we realized that we were only allowed to obtain 1000 rows of sample data from the Prince George's County. The 1000 rows of data can be found at their offical [API endpoint](https://data.princegeorgescountymd.gov/resource/9hyf-46qb.json). Hence, only addressed from the 1000 rows of data will work on the application. 
 
 Some addressed for testing:
@@ -94,8 +107,8 @@ Some addressed for testing:
 
 
 ### Known Bugs
-1. The Prince George's County API only provides 1000 rows of data when using SODA API and this limitation causes an issue that the map doesn't respond when an address that isn't in the 1000 rows of data is entered.
-2. Sometimes searching for an address takes longer than usual. 
+1. The Prince George's County API only provides 1000 rows of data when using their offical [SODA API](https://dev.socrata.com/foundry/data.princegeorgescountymd.gov/9hyf-46qb) and this limitation causes an issue that the map doesn't respond when an address that isn't in the 1000 rows of data is entered.
+2. Sometimes searching for an address may take longer.
 
 ### Future Roadmap
 1. Work with the Prince George's County to either request full access to the database or Create local or online database tha can store all the data. 
