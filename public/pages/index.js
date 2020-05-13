@@ -141,7 +141,7 @@ export default class IndexPage extends React.Component {
               <h1>Don't Be a Fool, </h1>
               <h1>
                 Check Before You &nbsp;
-                <div className="green-highlight">
+                <div className="green">
                   <Typewriter
                     options={{
                       strings: ["Buy", "Rent"],
