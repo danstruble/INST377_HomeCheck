@@ -23,12 +23,15 @@ const DocumentationContent = () => (
             show home inspection violation information.
           </li>
           <br></br>
+
           <div className="note">
-            The Prince George's County API only provides 1000 rows of data when
-            using their offical SODA API and this limitation causes an issue
-            that the map doesn't respond when an address that isn't in the 1000
-            rows of data is entered.
+            It should be noted the Prince George's County API only provides 1000
+            rows of data when using their offical SODA API and this limitation
+            causes an issue that the map doesn't respond when an address that
+            isn't in the 1000 rows of data is entered.
             <br></br>
+            <br></br>
+
             Some addressed for testing:
             <ul>
               <li>11505 Old Baltimore Pike</li>
@@ -43,9 +46,7 @@ const DocumentationContent = () => (
       <h1>Developer Notes</h1>
       <div className="description">
         <h2>PUT</h2>
-        <div className = 'api_text'>
-          /api/search
-        </div>
+        <div className="api_text">/api/search</div>
         <p>
           This is a PUT request. This is called when a user first clicks the
           search button on the Home Page, and sends a JSON object which contains
@@ -61,9 +62,7 @@ const DocumentationContent = () => (
         <br></br>
 
         <h2>GET</h2>
-        <div className = 'api_text'>
-        /api/search/results
-        </div>
+        <div className="api_text">/api/search/results</div>
         <p>
           This is a GET request. This is called after the /api/search call is
           performed after the user has searched for a location. Being a GET
@@ -77,9 +76,7 @@ const DocumentationContent = () => (
         <br></br>
 
         <h2>POST</h2>
-        <div className = 'api_text'>
-        /api/form/submit
-        </div>
+        <div className="api_text">/api/form/submit</div>
         <p>
           This is a POST endpoint. At the minimum, a request with the body
           content of a JSON object consisting of a "name" field, "email" field,

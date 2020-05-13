@@ -35,14 +35,14 @@ h3 {
   margin-bottom: 15px;
 }
 
-.slogan h1{
+.slogan h1 {
   letter-spacing: 1px;
 }
 
 .green {
   color: rgb(26, 182, 125);
   display: inline;
-  margin-left:-8px;
+  margin-left: -8px;
 }
 .green-highlight {
   color: rgb(26, 182, 125);
@@ -59,7 +59,6 @@ h3 {
   flex-direction: column;
   justify-content: center;
 }
-
 
 .logo h1 {
   color: #ffffff;
@@ -107,25 +106,23 @@ nav {
   display: none;
 }
 
-
 .search-box {
   background: #383838;
   height: 20px;
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
-  width:420px;
+  width: 420px;
 }
 
 .search-box:hover > .search-btn {
   background: rgb(171, 211, 223);
-
 }
 
 .search-btn {
   margin-top: -10px;
   margin-right: -10px;
-  float:right;
+  float: right;
   width: 40px;
   height: 40px;
   border-radius: 10%;
@@ -136,8 +133,8 @@ nav {
 }
 
 .search-txt {
-  float:left;
-  display:flex;
+  float: left;
+  display: flex;
   border: none;
   background: none;
   outline: none;
@@ -154,7 +151,7 @@ nav {
   align-items: center;
   margin-bottom: 50px;
   margin-top: 10px;
-  width:100%;
+  width: 100%;
 }
 
 .leaflet-container {
@@ -204,7 +201,6 @@ nav {
   font-weight: 700;
   font-size: 36px;
 }
-
 
 .contact-wrapper {
   margin-top: 20px;
@@ -326,19 +322,19 @@ nav {
   text-align: left;
 }
 
-.description li{
+.description li {
   line-height: 1.5;
   margin-bottom: 10px;
 }
 
-.description h2{
-  font-size:25px;
+.description h2 {
+  font-size: 25px;
 }
-.note{
+.note {
   font-size: 0.8rem;
   color: #a17d7d;
 }
-.api_text{
+.api_text {
   color: #a17d7d;
   margin-top: 30px;
 }
@@ -455,23 +451,22 @@ nav {
     width: 50%;
     z-index: 10000;
   }
-
 }
 
 @media screen and (max-width: 768px) {
   body {
     overflow-x: hidden;
   }
-  p{
-    margin:0px;
+  p {
+    margin: 0px;
   }
-  .description{
-    width:100%;
+  .description {
+    width: 100%;
   }
-  .description h2{
+  .description h2 {
     font-size: 24px;
   }
-  .margin{
+  .margin {
     min-width: 380px;
   }
   .nav-links {
@@ -497,7 +492,7 @@ nav {
   .burger {
     display: block;
   }
-  .map{
+  .map {
     width: 100%;
   }
   .leaflet-container {
@@ -507,19 +502,18 @@ nav {
     width: 100%;
   }
   .section-three {
-    width:100%;
+    width: 100%;
   }
   .section-two {
-    width:100%;
+    width: 100%;
   }
-
 }
 
 @media screen and (max-width: 520px) {
-  .search-inst{
+  .search-inst {
     font-size: 14px;
-  } 
-  .slogan h1{
+  }
+  .slogan h1 {
     letter-spacing: 0px;
   }
   .search-box {
@@ -535,7 +529,7 @@ nav {
   .description p {
     font-size: 16px;
     width: 100%;
-    margin-left:  0;
+    margin-left: 0;
     margin-right: 0;
   }
 
@@ -545,26 +539,25 @@ nav {
     min-width: 370px;
   }
 
-  .wrapper h1{
+  .wrapper h1 {
     font-size: 28px;
-
   }
   .section-two {
     margin-right: 0px;
-    width:100%;
+    width: 100%;
   }
 
-  .section-one h1{
-    font-size:28px;
+  .section-one h1 {
+    font-size: 28px;
     word-spacing: 0px;
   }
 
-  .section-one h2{
-    font-size:28px;
+  .section-one h2 {
+    font-size: 28px;
     word-spacing: 0px;
   }
 
-  .section-two h6{
+  .section-two h6 {
     overflow-wrap: break-word;
   }
   .section-three {
@@ -575,11 +568,11 @@ nav {
   .role p {
     font-size: 15px;
   }
-  
+
   .interests p {
     font-size: 15px;
   }
-  .map{
+  .map {
     width: 95%;
   }
   .leaflet-container {
@@ -602,5 +595,3 @@ nav {
     transform: translateX(0px);
   }
 }
-
-

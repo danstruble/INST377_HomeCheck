@@ -3,7 +3,9 @@ import React from "react";
 const AboutContent = () => (
   <div className="container">
     <div className="wrapper">
-      <h1>We are Home<span className="green-highlight">CHECK</span></h1>
+      <h1>
+        We are Home<span className="green-highlight">CHECK</span>
+      </h1>
       <div className="description">
         <p>
           Building code violations are problematic to prospective buyers and
@@ -28,7 +30,9 @@ const AboutContent = () => (
           property.
         </p>
       </div>
-      <h1>Meet the <span className="green-highlight">Team</span></h1>
+      <h1>
+        Meet the <span className="green-highlight">Team</span>
+      </h1>
       <div className="about-team">
         <div className="team-member">
           <div className="img">

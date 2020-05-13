@@ -8,19 +8,22 @@ export default class ContactForm extends React.Component {
   }
 
   handleFormSubmit() {
-
     const name = document.querySelector('input[name="user_name"]');
-    const email = document.querySelector('input[name="user_email"]')
-    const message = document.querySelector('input[name="user_message"]')
+    const email = document.querySelector('input[name="user_email"]');
+    const message = document.querySelector('input[name="user_message"]');
 
-    fetch('/api/form/submit', {
-      method: 'POST',
-      credentials: 'same-origin',
+    fetch("/api/form/submit", {
+      method: "POST",
+      credentials: "same-origin",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name: name.value, email: email.value, message: message.value })
-    })
+      body: JSON.stringify({
+        name: name.value,
+        email: email.value,
+        message: message.value,
+      }),
+    });
   }
 
   render() {
@@ -34,13 +37,12 @@ export default class ContactForm extends React.Component {
           <div className="contact-wrapper">
             <div className="section-two">
               <p>
-                Feel free to get in touch with us with any questions or inquiries.
-                We are always open to discussing new projects, creative ideas or
-                opportunities to be part of your visions.
+                Feel free to get in touch with us with any questions or
+                inquiries. We are always open to discussing new projects,
+                creative ideas or opportunities to be part of your visions.
               </p>
               <h5>Need help?</h5>
               <h6>INST377homeCheck@gmail.com</h6>
-
             </div>
             <div className="section-three">
               <article className="contact-main">
@@ -71,7 +73,12 @@ export default class ContactForm extends React.Component {
                         placeholder="Message"
                       />
                     </li>
-                    <button className="form-btn" onClick={this.handleFormSubmit}>Send</button>
+                    <button
+                      className="form-btn"
+                      onClick={this.handleFormSubmit}
+                    >
+                      Send
+                    </button>
                   </ul>
                 </form>
               </article>
@@ -79,8 +86,6 @@ export default class ContactForm extends React.Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
-
 }
-

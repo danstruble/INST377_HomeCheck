@@ -6,26 +6,28 @@ export default class Nav extends React.Component {
   constructor() {
     super();
     this.state = {
-      open: false
+      open: false,
     };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
     this.setState({
-      open: !this.state.open
+      open: !this.state.open,
     });
     const nav = document.querySelector(".nav-links");
-    const navLinks = document.querySelectorAll('.nav-links li')
+    const navLinks = document.querySelectorAll(".nav-links li");
     nav.classList.toggle("nav-active");
 
     navLinks.forEach((link, index) => {
       if (link.style.animation) {
-        link.style.animation = ''
+        link.style.animation = "";
       } else {
-        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
+        link.style.animation = `navLinkFade 0.5s ease forwards ${
+          index / 7 + 0.5
+        }s`;
       }
-    })
+    });
   }
 
   render() {
@@ -38,16 +40,24 @@ export default class Nav extends React.Component {
         </div>
         <ul className="nav-links">
           <li>
-            <Link href="/"><a>Home</a></Link>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
           </li>
           <li>
-            <Link href="/about"><a>About</a></Link>
+            <Link href="/about">
+              <a>About</a>
+            </Link>
           </li>
           <li>
-            <Link href="/documentation"><a>Documentation</a></Link>
+            <Link href="/documentation">
+              <a>Documentation</a>
+            </Link>
           </li>
           <li>
-            <Link href="/contact"><a>Contact Us</a></Link>
+            <Link href="/contact">
+              <a>Contact Us</a>
+            </Link>
           </li>
         </ul>
         <div className="burger">
