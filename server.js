@@ -146,7 +146,6 @@ server
 
     app.post('/api/form/submit', (req, res) => {
       req.session.form = req.body;
-      console.log(req.session.form);
       db.run("INSERT INTO contact_forms(name, email, message) VALUES(?,?,?);", [req.session.form.name,req.session.form.email,req.session.form.message], (err) => {
         if(err) {
           return console.log(err.message); 
