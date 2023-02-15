@@ -1,3 +1,6 @@
+# This project is archived
+Leaving this publicly archived as a reference for our UMD INST377 semester project. No updates are intended to be pushed, and all test environments/APIs most likely don't work anymore. 
+
 # HomeCheck
 HomeCheck is a web application built on HTML/CSS/JS with NodeJS and Express framework that is designed to help Prince George's County buyers and renters to have easy accessibility on building code violations of houses in Prince George's County. 
 
